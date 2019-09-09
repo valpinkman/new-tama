@@ -1,0 +1,45 @@
+{
+  "name": "new-tama",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "engines": {
+    "node": "10.x"
+  },
+  "scripts": {
+    "dev": "next",
+    "now-dev": "next",
+    "now-build": "next build",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@zeit/webpack-asset-relocator-loader": "0.5.8",
+    "firebase": "^6.3.5",
+    "firebase-admin": "^8.3.0",
+    "local-storage": "^2.0.0",
+    "next": "^9.0.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-firebase-hooks": "^2.1.0",
+    "styled-components": "^4.3.2",
+    "styled-normalize": "^8.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.2",
+    "@types/nprogress": "^0.2.0",
+    "@types/react": "^16.9.1",
+    "@types/styled-components": "^4.1.18",
+    "@types/styled-jsx": "^2.2.8",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "babel-plugin-styled-components": "^1.10.6",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.3"
+  }
+}
