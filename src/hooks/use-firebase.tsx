@@ -1,13 +1,11 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
-
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
 import cert from './cert'
 
-
-const config = process.env.NODE_ENV === 'development' ? cert : {
-  apikey: process.env.FB_API_KEY,
+const config = process.env.NODE_ENV !== 'production' ? cert : {
+  apiKey: process.env.FB_API_KEY,
   authDomain: process.env.FB_AUTH_DOMAIN,
   databaseURL: process.env.DB_URL,
   projectId: process.env.FB_PROJECT_ID,
@@ -17,12 +15,14 @@ const config = process.env.NODE_ENV === 'development' ? cert : {
 }
 
 const initFirebase = () => {
-  if (firebase.apps.length > 0) return
-
-  firebase.initializeApp(config)
+  if (!firebase.apps.length) {
+    firebase.initializeApp(config)
+  }
 }
 
+
 initFirebase()
+
 
 const firebaseContext = createContext<firebase.app.App>(firebase.app())
 

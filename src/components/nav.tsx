@@ -27,6 +27,7 @@ const Nav = styled.nav`
 `
 
 const A = styled.a<{ light?: boolean; gold?: boolean; pro?: boolean; active?: boolean }>`
+  cursor: pointer;
   text-decoration: none;
   font-size: 20px;
   line-height: 28px;

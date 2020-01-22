@@ -1,7 +1,5 @@
 import React from 'react'
 import App from 'next/app'
-import { ThemeProvider } from 'styled-components'
-
 import { ProvideAuth } from '../src/hooks/use-firebase'
 import { ProviderLang } from '../src/hooks/use-lang'
 

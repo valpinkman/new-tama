@@ -16,12 +16,7 @@ const fr: Route[] = [
   },
   {
     key: 'products',
-    title: 'nos produits',
-    src: '/nos-produits',
-  },
-  {
-    key: 'product',
-    title: '',
+    title: 'nos smoothies',
     src: '/nos-produits',
   },
   {
@@ -65,11 +60,6 @@ const en: Route[] = [
   {
     key: 'products',
     title: 'our products',
-    src: '/our-products',
-  },
-  {
-    key: 'product',
-    title: '',
     src: '/our-products',
   },
   {

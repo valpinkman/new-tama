@@ -16,6 +16,7 @@
   },
   "plugins": ["@typescript-eslint", "react", "react-hooks"],
   "rules": {
+    "object-curly-spacing": ["error", "always"],
     "semi": ["error", "never"],
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/no-explicit-any": 0,

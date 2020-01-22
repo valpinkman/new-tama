@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-class MyDocument extends Document {
+class MyDocument extends Document<any> {
   constructor(props: any) {
     super(props)
   }

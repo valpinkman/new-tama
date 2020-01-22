@@ -1,9 +1,9 @@
-import React, { useEffect} from 'react'
+import React, { useEffect } from 'react'
 
 import { useChangeLang } from '../src/hooks/use-lang'
 
 import { getPosts } from '../src/services/wordpress'
-import Menu from '../src/components/navigation/menu'
+import Layout from '../src/components/layout'
 import Sign from '../src/components/user/sign'
 
 const Index = () => {
@@ -14,7 +14,7 @@ const Index = () => {
   }, [])
 
   return (
-    <Menu>
+    <Layout>
       <h1>Hello World</h1>
       <span>Lang: {lang}</span>
       <div>
@@ -26,7 +26,7 @@ const Index = () => {
       <div>
         <Sign />
       </div>
-    </Menu>
+    </Layout>
   )
 }
 

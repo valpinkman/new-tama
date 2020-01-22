@@ -30,7 +30,7 @@
     },
     {
       "src": "/fraiches-news/fraiche/(?<slug>[^/]+)",
-      "dest": "/article?slug=$slug"
+      "dest": "/blog/article/$slug"
     },
     {
       "src": "/boutique",
@@ -58,7 +58,7 @@
     },
     {
       "src": "/our-products/(?<slug>[^/]+)",
-      "dest": "/product?slug=$slug"
+      "dest": "/products?slug=$slug"
     },
     {
       "src": "/fresh-news",
@@ -66,7 +66,7 @@
     },
     {
       "src": "/fresh-news/fresh/(?<slug>[^/]+)",
-      "dest": "/article?slug=$slug"
+      "dest": "/blog/article/$slug"
     },
     {
       "src": "/shop",
@@ -82,7 +82,7 @@
     },
     {
       "src": "/prodotti/(?<slug>[^/]+)",
-      "dest": "/product?slug=$slug"
+      "dest": "/products?slug=$slug"
     },
     {
       "src": "/notizie-fresche",
@@ -90,7 +90,7 @@
     },
     {
       "src": "/notizie-fresche/fresca/(?<slug>[^/]+)",
-      "dest": "/article?slug=$slug"
+      "dest": "/blog/article/$slug"
     },
     {
       "src": "/negozio",
