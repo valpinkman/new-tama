@@ -14,7 +14,7 @@ const Index = () => {
   }, [])
 
   return (
-    <Menu lang={lang}>
+    <Menu>
       <h1>Hello World</h1>
       <span>Lang: {lang}</span>
       <div>

@@ -105,7 +105,7 @@ const en: Route[] = [
 ]
 const it: Route[] = [
   {
-    key: 'concepr',
+    key: 'concept',
     title: 'concetto',
     src: '/concetto',
   },
