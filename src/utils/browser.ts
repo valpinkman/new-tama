@@ -9,7 +9,7 @@ const browserLanguagePropertyKeys = [
   'systemLanguage',
 ]
 
-export const findBrowserLanguage = (): Lang => {
+export const getLanguage = (): Lang => {
 
   if (typeof window !== 'undefined') {
     const { navigator } = window

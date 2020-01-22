@@ -3,25 +3,18 @@ import React, { createContext, useContext, useState, useEffect } from 'react'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
-const config = {
-  apiKey: 'AIzaSyCYfTDg8b79P24iGN0DQbw6YNeL2tj5kuE',
-  authDomain: 'tama-v2-test.firebaseapp.com',
-  databaseURL: 'https://tama-v2-test.firebaseio.com',
-  projectId: 'tama-v2-test',
-  storageBucket: 'tama-v2-test.appspot.com',
-  messagingSenderId: '958449183639',
-  appId: '1:958449183639:web:c98fbb92eb669206',
-}
+import cert from './cert'
 
-// const config = {
-//   apikey: process.env.FB_API_KEY,
-//   authDomain: process.env.FB_AUTH_DOMAIN,
-//   databaseURL: process.env.DB_URL,
-//   projectId: process.env.FB_PROJECT_ID,
-//   storageBucket: process.env.FB_STORAGE_BUCKET,
-//   messagingSenderId: process.env.FB_MESSENGER_SENDER_ID,
-//   appId: process.env.FB_APP_ID,
-// }
+
+const config = process.env.NODE_ENV === 'development' ? cert : {
+  apikey: process.env.FB_API_KEY,
+  authDomain: process.env.FB_AUTH_DOMAIN,
+  databaseURL: process.env.DB_URL,
+  projectId: process.env.FB_PROJECT_ID,
+  storageBucket: process.env.FB_STORAGE_BUCKET,
+  messagingSenderId: process.env.FB_MESSENGER_SENDER_ID,
+  appId: process.env.FB_APP_ID,
+}
 
 const initFirebase = () => {
   if (firebase.apps.length > 0) return
@@ -56,21 +49,31 @@ export const useProvideAuth = () => {
   const [user, setUser] = useState<firebase.User | null>(null)
 
   const signin = async (email: string, password: string) => {
-    const response = await firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
+    try {
+      const response = await firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
 
-    setUser(response.user)
-    return response.user
+      setUser(response.user)
+      return response.user
+    } catch (error) {
+      console.warn(error)
+      return null
+    }
   }
 
   const signup = async (email: string, password: string) => {
-    const response = await firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
+    try {
+      const response = await firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
 
-    setUser(response.user)
-    return response.user
+      setUser(response.user)
+      return response.user
+    } catch (error) {
+      console.warn(error)
+      return null
+    }
   }
 
   const signout = async () => {

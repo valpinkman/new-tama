@@ -1,14 +1,14 @@
 import React, { createContext, useState, useEffect, useContext } from 'react'
 import { MaybeLang, Lang } from '../../types/lang'
 import { getLang, saveLang } from '../utils/localStorage'
-import { findBrowserLanguage } from '../utils/browser'
+import { getLanguage } from '../utils/browser'
 
 const langContext = createContext<{
   lang: MaybeLang;
   changeLang: (lang: Lang) => void;
 }>({
       lang: null,
-      changeLang: () => {},
+      changeLang: () => {}, // eslint-disable-line @typescript-eslint/no-empty-function
     })
 
 const useGetLang = () => {
@@ -21,7 +21,7 @@ const useGetLang = () => {
 
   useEffect(() => {
     if (!lang) {
-      const browserLang = getLang() || findBrowserLanguage()
+      const browserLang = getLang() || getLanguage()
       setLangWithPref(browserLang)
     }
   }, [lang, setLangWithPref])
