@@ -286,7 +286,7 @@ export default {
     },
     cocktail: {
       name: 'product',
-      route: '/our-products/:product',
+      route: '/our-products/[product]',
       page: 'products',
       title: 'our smoothies',
     },
@@ -298,7 +298,7 @@ export default {
     },
     article: {
       name: 'fresh',
-      route: '/fresh-news/fresh/:slug',
+      route: '/fresh-news/fresh/[slug]',
       page: 'article',
     },
     events: {

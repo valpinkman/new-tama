@@ -288,7 +288,7 @@ export default {
     cocktail: {
       name: 'prodotto',
       title: 'i nostri prodotti',
-      route: '/prodotti/:product',
+      route: '/prodotti/[product]',
       page: 'products',
     },
     blog: {
@@ -299,7 +299,7 @@ export default {
     },
     article: {
       name: 'fresca',
-      route: '/notizie-fresche/fresca/:slug',
+      route: '/notizie-fresche/fresca/[slug]',
       page: 'article',
     },
     events: {

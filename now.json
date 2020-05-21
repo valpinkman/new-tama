@@ -17,12 +17,12 @@
       "dest": "/about"
     },
     {
-      "src": "/nos-produits",
-      "dest": "/products?slug=smoothies"
-    },
-    {
       "src": "/nos-produits/(?<product>[^/]+)",
       "dest": "/products/$product"
+    },
+    {
+      "src": "/nos-produits",
+      "dest": "/products"
     },
     {
       "src": "/fraiches-news",
@@ -53,12 +53,12 @@
       "dest": "/about"
     },
     {
-      "src": "/our-products",
-      "dest": "/products"
-    },
-    {
       "src": "/our-products/(?<product>[^/]+)",
       "dest": "/products/$product"
+    },
+    {
+      "src": "/our-products",
+      "dest": "/products"
     },
     {
       "src": "/fresh-news",

@@ -4,6 +4,7 @@ export const ORANGE = 'hsl(37, 92%, 61%)'
 export const GREEN = 'hsl(133, 39%, 55%)'
 export const DARK_ORANGE = 'hsl(17, 84%, 60%)'
 export const GOLD = 'hsl(47, 51%, 65%)'
+export const PINK = 'hsl(338.5, 41.6%, 92%)'
 
 export const G_ORANGE_START = 'hsl(40, 94%, 64%)'
 export const G_ORANGE_END = 'hsl(44, 95%, 92%)'

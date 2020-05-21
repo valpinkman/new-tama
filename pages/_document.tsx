@@ -50,7 +50,6 @@ class MyDocument extends Document<any> {
         </Head>
         <body>
           <Main />
-
           <NextScript />
         </body>
       </html>

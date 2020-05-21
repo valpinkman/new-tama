@@ -38,7 +38,6 @@ const useGetLang = () => {
 
 export const useLang = () => {
   const { lang } = useContext(langContext)
-
   return lang
 }
 
@@ -58,25 +57,8 @@ export const ProviderLang = ({ children }: { children: React.ReactNode }) => {
   )
 }
 
-export const useTranslations = (omitted: string[] = []) => {
-  const lang = useLang()
+export const useTranslations = (lang: MaybeLang = 'fr') => {
   const [current, setCurrent] = useState<Translations>(() => langs[lang || 'fr'])
-
-  const setupTranslations = (current: Translations, omitted: string[]) => {
-    const txs: Partial<Translations> = {}
-    if (omitted) {
-      Object.keys(current).forEach(key => {
-        if (omitted.includes(key)) {
-          return
-        }
-        txs[key as KeysOfTranslations] = current[key as KeysOfTranslations]
-      })
-    }
-
-    return txs
-  }
-
-  const [translations, setTranslations] = useState(() => setupTranslations(current, omitted))
 
   useEffect(() => {
     if (lang) {
@@ -84,10 +66,5 @@ export const useTranslations = (omitted: string[] = []) => {
     }
   }, [lang])
 
-  useEffect(() => {
-    const newTxs = setupTranslations(current, omitted)
-    setTranslations(newTxs)
-  }, [current, omitted])
-
-  return translations
+  return current
 }

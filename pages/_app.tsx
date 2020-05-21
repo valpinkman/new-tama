@@ -1,26 +1,11 @@
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 import React from 'react'
 import App from 'next/app'
-import { createGlobalStyle } from 'styled-components'
-import { Normalize } from 'styled-normalize'
 import { ProvideAuth } from '../src/hooks/use-firebase'
 import { ProviderLang } from '../src/hooks/use-lang'
+import DefaultStyle from '../src/styles/global'
 
-const GlobalStyle = createGlobalStyle`
-  html,
-  body {
-    margin: 0;
-    height: 100%;
-    font-family: sans-serif;
-  }
 
-  #__next {
-    height: 100vh;
-  }
-
-  [class^="__next"] {
-    height: 100vh;
-  }
-`
 
 export default class MyApp extends App {
   render() {
@@ -29,8 +14,7 @@ export default class MyApp extends App {
     return (
       <ProvideAuth>
         <ProviderLang>
-          <Normalize />
-          <GlobalStyle />
+          <DefaultStyle />
           <Component {...pageProps} />
         </ProviderLang>
       </ProvideAuth>

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Layout from '../src/components/layout'
 
 const About = (props: any) => {
   useEffect(() => {
@@ -6,7 +7,9 @@ const About = (props: any) => {
   })
 
   return (
-    <h1>About</h1>
+    <Layout>
+      <h1>About</h1>
+    </Layout>
   )
 }
 

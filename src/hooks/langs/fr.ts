@@ -188,7 +188,7 @@ export default {
       },
     },
     testimony:
-      'Après avoir découvert au Costa Rica de véritables smoothies au bon goût de fruits frais, nous avons développé un process unique permettant de ramener cette gourmandise bienfaitrice : en coupant les fruits en morceaux, que nous avons ensuite mis dans des sachets, pour les congeler afin de préserver fraicheur et qualités nutritives. Le Smoothie Tamarindo était né !',
+      'Après avoir découvert au Costa Rica de véritables smoothies au bon goût de fruits frais, nous avons développé un processus unique permettant de ramener cette gourmandise bienfaitrice : en coupant les fruits en morceaux, que nous avons ensuite mis dans des sachets, pour les congeler afin de préserver fraicheur et qualités nutritives. Le Smoothie Tamarindo était né !',
   },
   login: {
     pageTitle: 'Connexion - Smoothies Tamarindo',
@@ -287,7 +287,7 @@ export default {
     },
     cocktail: {
       name: 'produit',
-      route: '/nos-produits/:product',
+      route: '/nos-produits/[product]',
       page: 'products',
       title: 'nos smoothies',
     },
@@ -299,7 +299,7 @@ export default {
     },
     article: {
       name: 'fraiche',
-      route: '/fraiches-news/fraiche/:slug',
+      route: '/fraiches-news/fraiche/[slug]',
       page: 'article',
     },
     events: {

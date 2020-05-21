@@ -1,4 +1,6 @@
 import React,{ useEffect } from 'react'
+import { getPosts } from '../../src/services/wordpress'
+import Layout from '../../src/components/layout'
 
 const Blog = (props: any) => {
   useEffect(() => {
@@ -6,14 +8,27 @@ const Blog = (props: any) => {
   })
 
   return (
-    <h1>Blog</h1>
+    <Layout>
+      <h1>Blog</h1>
+    </Layout>
   )
 }
 
 Blog.getInitialProps = async () => {
-  return {
-    page: 'blog',
+  try {
+    const posts = await getPosts()
+    return {
+      page: 'blog',
+      posts,
+    }
+  } catch (error) {
+    console.log(error)
+    return {
+      page: 'blog',
+      posts: [],
+    }
   }
+
 }
 
 export default Blog
