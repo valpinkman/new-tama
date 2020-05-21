@@ -238,7 +238,9 @@ const Index = () => {
           <Title>
             {capitalize(index.testimonyTitle)}
           </Title>
-          <RoundImg src="/static/images/index-end.png" alt="mitou et charles" />
+          <Section>
+            <RoundImg src="/static/images/index-end.png" alt="mitou et charles" />
+          </Section>
           <p>{index.testimony}</p>
         </Section>
       </Main>
