@@ -140,6 +140,14 @@ const FloatingAStyle = styled.a`
   width: 100%;
 `
 
+const P = styled.p`
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  color: ${DARK_GRAY};
+`
+
 const Index = () => {
   const lang = useLang()
   const translations = useTranslations(lang)
@@ -241,7 +249,7 @@ const Index = () => {
           <Section>
             <RoundImg src="/static/images/index-end.png" alt="mitou et charles" />
           </Section>
-          <p>{index.testimony}</p>
+          <P>{index.testimony}</P>
         </Section>
       </Main>
       <div>

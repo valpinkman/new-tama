@@ -2,6 +2,8 @@
   "version": 2,
   "alias": ["tamarindo-v2"],
   "github": {
+    "enabled": true,
+    "autoAlias": true,
     "autoJobCancelation": true
   },
   "builds": [
