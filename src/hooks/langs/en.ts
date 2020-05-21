@@ -2,7 +2,7 @@ export default {
   about: {
     pageTitle: 'Our Concept - Smoothies Tamarindo',
     title: "Why does Tamrindo's smoothies taste like real fruits?",
-    img: '/static/img/extras/extra-4.png',
+    img: '/static/images/extras/extra-4.png',
     subtitle:
       'Hand-crafted, natural, without additives or preservatives, only fruit. We give you everything to know about our smoothies',
     description: "Smoothies Tamarindo, the original fruit's taste",
@@ -10,30 +10,30 @@ export default {
       {
         name: 'fruits',
         title: 'Our fruits are seasonal and harvested ripe',
-        img: '/static/img/pictos/gray/fruits.png',
+        img: '/static/images/pictos/gray/fruits.png',
       },
       {
         name: 'cut',
         title: 'Hand-cut by real people',
-        img: '/static/img/pictos/gray/cut.png',
+        img: '/static/images/pictos/gray/cut.png',
       },
       {
         name: 'freeze',
         title:
           "Stored in individual bags, without additives or preservatives, it's only fruit that are then frozen to keep the freshness and vitamins",
-        img: '/static/img/pictos/gray/freeze.png',
+        img: '/static/images/pictos/gray/freeze.png',
       },
       {
         name: 'blend',
         title:
           'Poor into blender with water or milk, a bit of sugar, blend for 1mn...',
-        img: '/static/img/pictos/gray/blender.png',
+        img: '/static/images/pictos/gray/blender.png',
       },
       {
         name: 'drink',
         title:
           '... and voila, a 100% natural and healthy smoothie, ready to be enjoyed!',
-        img: '/static/img/pictos/gray/glass.png',
+        img: '/static/images/pictos/gray/glass.png',
       },
     ],
     videos: {
@@ -57,43 +57,43 @@ export default {
       {
         name: 'ultra violet',
         fruits: 'strawberry, banana, blueberry',
-        picture: '/static/img/cocktails/smoothies/ultra-violet.png',
-        illustration: '/static/img/cocktails/smoothies/ultra-violet-fruits.png',
+        picture: '/static/images/cocktails/smoothies/ultra-violet.png',
+        illustration: '/static/images/cocktails/smoothies/ultra-violet-fruits.png',
         color: 'ULTRA_VIOLET',
       },
       {
         name: 'exotic',
         fruits: 'mango, pineapple, passion fruit',
-        picture: '/static/img/cocktails/smoothies/exotic.png',
-        illustration: '/static/img/cocktails/smoothies/exotic-fruits.png',
+        picture: '/static/images/cocktails/smoothies/exotic.png',
+        illustration: '/static/images/cocktails/smoothies/exotic-fruits.png',
         color: 'EXOTIC',
       },
       {
         name: 'coco mango',
         fruits: 'mango, strawberry, coconut',
-        picture: '/static/img/cocktails/smoothies/coco-mango.png',
-        illustration: '/static/img/cocktails/smoothies/coco-mango-fruits.png',
+        picture: '/static/images/cocktails/smoothies/coco-mango.png',
+        illustration: '/static/images/cocktails/smoothies/coco-mango-fruits.png',
         color: 'COCO_MANGO',
       },
       {
         name: 'tropical',
         fruits: 'mango, pineapple, lime',
-        picture: '/static/img/cocktails/smoothies/tropical.png',
-        illustration: '/static/img/cocktails/smoothies/tropical-fruits.png',
+        picture: '/static/images/cocktails/smoothies/tropical.png',
+        illustration: '/static/images/cocktails/smoothies/tropical-fruits.png',
         color: 'TROPICAL',
       },
       {
         name: 'fresh',
         fruits: 'strawberry, orange, fresh mint',
-        picture: '/static/img/cocktails/smoothies/fresh.png',
-        illustration: '/static/img/cocktails/smoothies/fresh-fruits.png',
+        picture: '/static/images/cocktails/smoothies/fresh.png',
+        illustration: '/static/images/cocktails/smoothies/fresh-fruits.png',
         color: 'FRESH',
       },
       {
         name: 'melon pop',
         fruits: 'watermelon, melon, raspberry, lime',
-        picture: '/static/img/cocktails/smoothies/melon-pop.png',
-        illustration: '/static/img/cocktails/smoothies/melon-pop-fruits.png',
+        picture: '/static/images/cocktails/smoothies/melon-pop.png',
+        illustration: '/static/images/cocktails/smoothies/melon-pop-fruits.png',
         color: 'MELON_POP',
       },
     ],
@@ -101,15 +101,15 @@ export default {
       {
         name: 'green splash',
         fruits: 'green apple, pear, spinach, banana, lime, basil',
-        picture: '/static/img/cocktails/greens/green-splash.png',
-        illustration: '/static/img/cocktails/greens/green-splash-fruits.png',
+        picture: '/static/images/cocktails/greens/green-splash.png',
+        illustration: '/static/images/cocktails/greens/green-splash-fruits.png',
         color: 'GREEN_SPLASH',
       },
       {
         name: 'boost',
         fruits: 'orange, mango, carot, lime, ginger',
-        picture: '/static/img/cocktails/greens/boost.png',
-        illustration: '/static/img/cocktails/greens/boost-fruits.png',
+        picture: '/static/images/cocktails/greens/boost.png',
+        illustration: '/static/images/cocktails/greens/boost-fruits.png',
         color: 'BOOST',
       },
     ],
@@ -119,21 +119,21 @@ export default {
         fruits: 'mango, strawberry, coconut',
         sirup: 'mungo jerry',
         alcohol: 'vodka',
-        picture: '/static/img/cocktails/signature/mungo-jerry.png',
+        picture: '/static/images/cocktails/signature/mungo-jerry.png',
       },
       {
         name: 'pura vida',
         fruits: 'mango, pineapple, lime',
         sirup: 'pura vida',
         alcohol: 'rum',
-        picture: '/static/img/cocktails/signature/pura-vida.png',
+        picture: '/static/images/cocktails/signature/pura-vida.png',
       },
       {
         name: 'summer pop',
         fruits: 'watermelon, melon, raspberry, lime',
         sirup: 'summer pop',
         alcohol: 'vodka',
-        picture: '/static/img/cocktails/signature/summer-pop.png',
+        picture: '/static/images/cocktails/signature/summer-pop.png',
       },
     ],
   },
@@ -159,21 +159,21 @@ export default {
       title: 'find out about our products',
       first: {
         title: 'our smoothies',
-        img: '/static/img/thumbs/smoothies.png',
+        img: '/static/images/thumbs/smoothies.png',
       },
       second: {
         title: 'signature cocktails',
-        img: '/static/img/thumbs/signature.png',
+        img: '/static/images/thumbs/signature.png',
       },
       third: {
         title: 'green smoothies',
-        img: '/static/img/thumbs/greens.png',
+        img: '/static/images/thumbs/greens.png',
       },
     },
     blog: {
       title: 'our blog',
       subtitle: 'fresh news, recipes, lifestyle...',
-      picture: '/static/img/recettes.jpg',
+      picture: '/static/images/recettes.jpg',
     },
     follow: 'Follow us',
     newsletter: {
@@ -187,6 +187,7 @@ export default {
         placeholder: 'name@email.com',
       },
     },
+    testimonyTitle: 'Our story',
     testimony:
       'After tasting the amazing fresh smoothies while travelling in Costa Rica, we created a unique process to bring back this healthy guilty pleasure: after cutting the fruits and storing them in little bags to freeze them, we could keep all the nutritive qualities and freshness of the fruit. The Tamarindo’s smoothie was born!',
   },
@@ -357,27 +358,27 @@ export default {
         {
           name: 'cut',
           title: 'Cut the bag with the frozen fruits in the middle',
-          img: '/static/img/howto/cut.png',
+          img: '/static/images/howto/cut.png',
         },
         {
           name: 'fruit',
           title: 'Poor the content of the bag into the blender',
-          img: '/static/img/howto/poor.png',
+          img: '/static/images/howto/poor.png',
         },
         {
           name: 'freeze',
           title: 'Add 20cl of water (or milk if you wanna make a milkshake)',
-          img: '/static/img/howto/water.png',
+          img: '/static/images/howto/water.png',
         },
         {
           name: 'glass',
           title: 'Add a tablespoon of sugar or one teaspoon of agave syrup',
-          img: '/static/img/howto/sugar.png',
+          img: '/static/images/howto/sugar.png',
         },
         {
           name: 'blend',
           title: 'Blend for 30s and serve',
-          img: '/static/img/howto/blend.png',
+          img: '/static/images/howto/blend.png',
         },
       ],
       videos: {
@@ -399,33 +400,33 @@ export default {
           title: 'B2B Documents',
           files: [
             {
-              imgSrc: '/static/img/thumbs/downloads/cocktails.png',
+              imgSrc: '/static/images/thumbs/downloads/cocktails.png',
               name: 'Signature Cocktails Leaflet',
               href:
                 '/static-protected/tamarindo_2018_menu_feuillet_cocktails.pdf',
             },
             {
-              imgSrc: '/static/img/thumbs/downloads/greens.png',
+              imgSrc: '/static/images/thumbs/downloads/greens.png',
               name: 'Green Smoothies Leaflet',
               href: '/static-protected/tamarindo_2018_menu_feuillet_greens.pdf',
             },
             {
-              imgSrc: '/static/img/thumbs/downloads/menu.png',
+              imgSrc: '/static/images/thumbs/downloads/menu.png',
               name: 'Smoothies Tamarindo Menu',
               href: '/static-protected/tamarindo_2018_menu.pdf',
             },
             {
-              imgSrc: '/static/img/thumbs/downloads/b2b.png',
+              imgSrc: '/static/images/thumbs/downloads/b2b.png',
               name: 'B2B Presentation Documents',
               href: '/static-protected/tamarindo_2018_plaquette_b2b.pdf',
             },
             {
-              imgSrc: '/static/img/thumbs/downloads/plv.png',
+              imgSrc: '/static/images/thumbs/downloads/plv.png',
               name: 'POS',
               href: '/static-protected/tamarindo_2018_plv.pdf',
             },
             {
-              imgSrc: '/static/img/thumbs/downloads/logos/logo_black.png',
+              imgSrc: '/static/images/thumbs/downloads/logos/logo_black.png',
               name: 'Complete Marketing Kit',
               href: '/static-protected/tamarindo_2018_communication_kit.zip',
             },
@@ -435,39 +436,39 @@ export default {
           title: 'Smoothies Assets',
           files: [
             {
-              imgSrc: '/static/img/thumbs/downloads/smoothies/coco_mango.png',
+              imgSrc: '/static/images/thumbs/downloads/smoothies/coco_mango.png',
               name: 'Coco Mango',
               href: '/static-protected/tamarindo_2018_smoothie_coco_mango.pdf',
             },
             {
-              imgSrc: '/static/img/thumbs/downloads/smoothies/exotic.png',
+              imgSrc: '/static/images/thumbs/downloads/smoothies/exotic.png',
               name: 'Exotic',
               href: '/static-protected/tamarindo_2018_smoothie_exotic.pdf',
             },
             {
-              imgSrc: '/static/img/thumbs/downloads/smoothies/fresh.png',
+              imgSrc: '/static/images/thumbs/downloads/smoothies/fresh.png',
               name: 'Fresh',
               href: '/static-protected/tamarindo_2018_smoothie_fresh.pdf',
             },
             {
-              imgSrc: '/static/img/thumbs/downloads/smoothies/melon_pop.png',
+              imgSrc: '/static/images/thumbs/downloads/smoothies/melon_pop.png',
               name: 'Melon Pop',
               href: '/static-protected/tamarindo_2018_smoothie_melon_pop.pdf',
             },
             {
-              imgSrc: '/static/img/thumbs/downloads/smoothies/tropical.png',
+              imgSrc: '/static/images/thumbs/downloads/smoothies/tropical.png',
               name: 'Tropical',
               href: '/static-protected/tamarindo_2018_smoothie_tropical.pdf',
             },
             {
-              imgSrc: '/static/img/thumbs/downloads/smoothies/ultra_violet.png',
+              imgSrc: '/static/images/thumbs/downloads/smoothies/ultra_violet.png',
               name: 'Ultra Violet',
               href:
                 '/static-protected/tamarindo_2018_smoothie_ultra_violet.pdf',
             },
             {
               imgSrc:
-                '/static/img/thumbs/downloads/smoothies/pack_smoothies.png',
+                '/static/images/thumbs/downloads/smoothies/pack_smoothies.png',
               name: 'Smoothies Assets Pack',
               href: '/static-protected/tamarindo_2018_smoothies_pack.zip',
             },
@@ -477,17 +478,17 @@ export default {
           title: 'Green Smoothies Assets',
           files: [
             {
-              imgSrc: '/static/img/thumbs/downloads/greens/boost.png',
+              imgSrc: '/static/images/thumbs/downloads/greens/boost.png',
               name: 'Boost',
               href: '/static-protected/tamarindo_2018_green_boost.pdf',
             },
             {
-              imgSrc: '/static/img/thumbs/downloads/greens/green_splash.png',
+              imgSrc: '/static/images/thumbs/downloads/greens/green_splash.png',
               name: 'Green Splash',
               href: '/static-protected/tamarindo_2018_green_green_splash.pdf',
             },
             {
-              imgSrc: '/static/img/thumbs/downloads/greens/pack_greens.png',
+              imgSrc: '/static/images/thumbs/downloads/greens/pack_greens.png',
               name: 'Greens Smoothies Pack',
               href: '/static-protected/tamarindo_2018_greens_pack.zip',
             },
@@ -497,13 +498,13 @@ export default {
           title: 'Logos',
           files: [
             {
-              imgSrc: '/static/img/thumbs/downloads/logos/logo_black.png',
+              imgSrc: '/static/images/thumbs/downloads/logos/logo_black.png',
               name: 'Smoothies Tamarindo Logo',
               href: '/static-protected/tamarindo_2018_logo_black.zip',
             },
             {
               imgSrc:
-                '/static/img/thumbs/downloads/logos/logo_signature_black.png',
+                '/static/images/thumbs/downloads/logos/logo_signature_black.png',
               name: 'Signature Cocktails Logo',
               href: '/static-protected/tamarindo_2018_logo_signature_black.zip',
             },

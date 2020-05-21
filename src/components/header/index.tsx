@@ -23,6 +23,7 @@ const NavWrapper = styled.div`
 
 const LogoContainer = styled.div`
   width: 96px;
+  cursor: pointer;
 `
 
 function Header() {

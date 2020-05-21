@@ -17,19 +17,19 @@
     },
     {
       "src": "/nos-produits/(?<product>[^/]+)",
-      "dest": "/products/$product"
+      "dest": "/products/product?id=$slug"
     },
     {
       "src": "/nos-produits",
       "dest": "/products"
     },
     {
-      "src": "/fraiches-news",
-      "dest": "/blog"
+      "src": "/fraiches-news/fraiche/(?<slug>[^/]+)",
+      "dest": "/blog/article?id=$slug"
     },
     {
-      "src": "/fraiches-news/fraiche/(?<slug>[^/]+)",
-      "dest": "/blog/article/$slug"
+      "src": "/fraiches-news",
+      "dest": "/blog"
     },
     {
       "src": "/boutique",
@@ -53,19 +53,19 @@
     },
     {
       "src": "/our-products/(?<product>[^/]+)",
-      "dest": "/products/$product"
+      "dest": "/products/product?id=$slug"
     },
     {
       "src": "/our-products",
       "dest": "/products"
     },
     {
-      "src": "/fresh-news",
-      "dest": "/blog"
+      "src": "/fresh-news/fresh/(?<slug>[^/]+)",
+      "dest": "/blog/article?id=$slug"
     },
     {
-      "src": "/fresh-news/fresh/(?<slug>[^/]+)",
-      "dest": "/blog/article/$slug"
+      "src": "/fresh-news",
+      "dest": "/blog"
     },
     {
       "src": "/shop",
@@ -76,20 +76,20 @@
       "dest": "/about"
     },
     {
+      "src": "/prodotti/(?<product>[^/]+)",
+      "dest": "/products/product?id=$slug"
+    },
+    {
       "src": "/prodotti",
       "dest": "/products"
     },
     {
-      "src": "/prodotti/(?<prodcut>[^/]+)",
-      "dest": "/products/$prodcut"
+      "src": "/notizie-fresche/fresca/(?<slug>[^/]+)",
+      "dest": "/blog/article?id=$slug"
     },
     {
       "src": "/notizie-fresche",
       "dest": "/blog"
-    },
-    {
-      "src": "/notizie-fresche/fresca/(?<slug>[^/]+)",
-      "dest": "/blog/article/$slug"
     },
     {
       "src": "/negozio",

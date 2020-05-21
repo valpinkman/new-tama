@@ -41,6 +41,8 @@ const conf = {
     FB_STORAGE_BUCKET: process.env.FB_STORAGE_BUCKET,
     FB_MESSENGER_SENDER_ID: process.env.FB_MESSENGER_SENDER_ID,
     FB_APP_ID: process.env.FB_APP_ID,
+    FB_API_KEY: process.env.FB_API_KEY,
+    WORDPRESS_ENDPOINT: process.env.WORDPRESS_ENDPOINT
   },
 }
 
