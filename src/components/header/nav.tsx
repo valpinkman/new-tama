@@ -50,9 +50,6 @@ function Nav() {
     }
   }, [lang, setNav])
 
-  console.log(nav)
-
-
   return (
     <Wrapper>
       {nav.map(({ src, title, key }) => (

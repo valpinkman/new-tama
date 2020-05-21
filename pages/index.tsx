@@ -85,10 +85,6 @@ const Index = () => {
   const translations = useTranslations(lang)
   const { index, footer, navigation } = translations
 
-  console.log(navigation)
-
-  console.log(index)
-
   return (
     <Layout>
       <Main>

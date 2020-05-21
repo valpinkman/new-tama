@@ -2,6 +2,8 @@ import React, { useState, useCallback } from 'react'
 
 import { useAuth } from '../../hooks/use-firebase'
 
+console.log('process.env.DB_URL', process.env.DB_URL)
+
 const Sign = () => {
   const auth = useAuth()
   const [email, setEmail] = useState<string>('')
