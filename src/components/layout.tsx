@@ -1,5 +1,10 @@
 import React from 'react'
-import Header from './header'
+import dynamic from 'next/dynamic'
+
+const HeaderNoSSR = dynamic(
+  () => import('./header'),
+  { ssr: false }
+)
 
 type Props = {
   children: React.ReactNode;
@@ -8,7 +13,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <Header />
+      <HeaderNoSSR />
       {children}
     </>
   )

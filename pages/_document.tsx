@@ -5,24 +5,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document'
-import { ServerStyleSheet, createGlobalStyle } from 'styled-components'
-import { Normalize } from 'styled-normalize'
-
-const GlobalStyle = createGlobalStyle`
-  html,
-  body {
-    height: 100%;
-    font-family: sans-serif;
-  }
-
-  #__next {
-    height: 100vh;
-  }
-
-  [class^="__next"] {
-    height: 100vh;
-  }
-`
+import { ServerStyleSheet } from 'styled-components'
 
 class MyDocument extends Document<any> {
   constructor(props: any) {
@@ -64,9 +47,6 @@ class MyDocument extends Document<any> {
             content="initial-scale=1.0, width=device-width"
           />
           <meta key="charset" charSet="utf-8" />
-
-          <Normalize />
-          <GlobalStyle />
         </Head>
         <body>
           <Main />

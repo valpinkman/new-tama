@@ -1,7 +1,14 @@
 import React, { createContext, useState, useEffect, useContext } from 'react'
-import { MaybeLang, Lang } from '../../types/lang'
+import { MaybeLang, Lang, Translations } from '../../types/lang'
 import { getLang, saveLang } from '../utils/localStorage'
 import { getLanguage } from '../utils/browser'
+import en from './langs/en'
+import fr from './langs/fr'
+import it from './langs/it'
+
+type KeysOfTranslations = keyof Translations
+
+const langs = { en, fr, it }
 
 const langContext = createContext<{
   lang: MaybeLang;
@@ -49,4 +56,38 @@ export const ProviderLang = ({ children }: { children: React.ReactNode }) => {
       {children}
     </langContext.Provider>
   )
+}
+
+export const useTranslations = (omitted: string[] = []) => {
+  const lang = useLang()
+  const [current, setCurrent] = useState<Translations>(() => langs[lang || 'fr'])
+
+  const setupTranslations = (current: Translations, omitted: string[]) => {
+    const txs: Partial<Translations> = {}
+    if (omitted) {
+      Object.keys(current).forEach(key => {
+        if (omitted.includes(key)) {
+          return
+        }
+        txs[key as KeysOfTranslations] = current[key as KeysOfTranslations]
+      })
+    }
+
+    return txs
+  }
+
+  const [translations, setTranslations] = useState(() => setupTranslations(current, omitted))
+
+  useEffect(() => {
+    if (lang) {
+      setCurrent(langs[lang])
+    }
+  }, [lang])
+
+  useEffect(() => {
+    const newTxs = setupTranslations(current, omitted)
+    setTranslations(newTxs)
+  }, [current, omitted])
+
+  return translations
 }

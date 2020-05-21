@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 
 interface Props {
   name?: string;
-
 }
 
 const Products = (props: any) => {
@@ -10,9 +9,7 @@ const Products = (props: any) => {
     console.log(props)
   })
 
-  return (
-    <h1>Products</h1>
-  )
+  return <h1>Products</h1>
 }
 
 Products.getInitialProps = async ({ query }: { query: any }) => {

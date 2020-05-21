@@ -21,8 +21,8 @@
       "dest": "/products?slug=smoothies"
     },
     {
-      "src": "/nos-produits/(?<slug>[^/]+)",
-      "dest": "/products?slug=$slug"
+      "src": "/nos-produits/(?<product>[^/]+)",
+      "dest": "/products/$product"
     },
     {
       "src": "/fraiches-news",
@@ -57,8 +57,8 @@
       "dest": "/products"
     },
     {
-      "src": "/our-products/(?<slug>[^/]+)",
-      "dest": "/products?slug=$slug"
+      "src": "/our-products/(?<product>[^/]+)",
+      "dest": "/products/$product"
     },
     {
       "src": "/fresh-news",
@@ -81,8 +81,8 @@
       "dest": "/products"
     },
     {
-      "src": "/prodotti/(?<slug>[^/]+)",
-      "dest": "/products?slug=$slug"
+      "src": "/prodotti/(?<prodcut>[^/]+)",
+      "dest": "/products/$prodcut"
     },
     {
       "src": "/notizie-fresche",
