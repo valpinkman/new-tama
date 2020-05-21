@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "tamarindo-v2",
   "alias": ["tamarindo-v2"],
   "github": {
     "autoJobCancelation": true
