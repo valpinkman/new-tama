@@ -1,0 +1,113 @@
+{
+  "version": 2,
+  "alias": ["tamarindo-v2"],
+  "github": {
+    "enabled": true,
+    "autoAlias": true,
+    "autoJobCancelation": true
+  },
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/notre-concept",
+      "dest": "/about"
+    },
+    {
+      "src": "/nos-produits/(?<product>[^/]+)",
+      "dest": "/products/product?id=$slug"
+    },
+    {
+      "src": "/nos-produits",
+      "dest": "/products"
+    },
+    {
+      "src": "/fraiches-news/fraiche/(?<slug>[^/]+)",
+      "dest": "/blog/article?id=$slug"
+    },
+    {
+      "src": "/fraiches-news",
+      "dest": "/blog"
+    },
+    {
+      "src": "/boutique",
+      "dest": "https://shop.smoothiestamarindo.com"
+    },
+    {
+      "src": "/espace-pro",
+      "dest": "/pro"
+    },
+    {
+      "src": "/connexion",
+      "dest": "/signin"
+    },
+    {
+      "src": "/inscription",
+      "dest": "/signup"
+    },
+    {
+      "src": "/our-concept",
+      "dest": "/about"
+    },
+    {
+      "src": "/our-products/(?<product>[^/]+)",
+      "dest": "/products/product?id=$slug"
+    },
+    {
+      "src": "/our-products",
+      "dest": "/products"
+    },
+    {
+      "src": "/fresh-news/fresh/(?<slug>[^/]+)",
+      "dest": "/blog/article?id=$slug"
+    },
+    {
+      "src": "/fresh-news",
+      "dest": "/blog"
+    },
+    {
+      "src": "/shop",
+      "dest": "https://shop.smoothiestamarindo.com"
+    },
+    {
+      "src": "/concetto",
+      "dest": "/about"
+    },
+    {
+      "src": "/prodotti/(?<product>[^/]+)",
+      "dest": "/products/product?id=$slug"
+    },
+    {
+      "src": "/prodotti",
+      "dest": "/products"
+    },
+    {
+      "src": "/notizie-fresche/fresca/(?<slug>[^/]+)",
+      "dest": "/blog/article?id=$slug"
+    },
+    {
+      "src": "/notizie-fresche",
+      "dest": "/blog"
+    },
+    {
+      "src": "/negozio",
+      "dest": "https://shop.smoothiestamarindo.com"
+    },
+    {
+      "src": "/sezione-pro",
+      "dest": "/pro"
+    },
+    {
+      "src": "/connessione",
+      "dest": "/signin"
+    },
+    {
+      "src": "/iscrizione",
+      "dest": "/signup"
+    }
+  ]
+}
