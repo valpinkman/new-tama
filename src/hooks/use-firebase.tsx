@@ -2,12 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react'
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
-let cert
-if (process.env.NODE_ENV === 'development') {
-  cert = require('./cert').default
-}
-
-const config = cert || {
+const config = {
   apiKey: process.env.FB_API_KEY,
   authDomain: process.env.FB_AUTH_DOMAIN,
   databaseURL: process.env.DB_URL,
