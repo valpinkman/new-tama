@@ -4,6 +4,8 @@ import 'firebase/auth'
 
 import cert from './cert'
 
+console.log('process.env.NODE_ENV', process.env.NODE_ENV)
+
 const config = process.env.NODE_ENV !== 'production' ? cert : {
   apiKey: process.env.FB_API_KEY,
   authDomain: process.env.FB_AUTH_DOMAIN,
