@@ -12,6 +12,7 @@ import Facebook from '../src/icons/drawn/facebook'
 import Twitter from '../src/icons/drawn/twitter'
 import Instagram from '../src/icons/drawn/instagram'
 import Youtube from '../src/icons/drawn/youtube'
+import { useProvideAuth } from '../src/hooks/use-firebase'
 
 const Img = styled.img`
   max-width: 100%;
@@ -151,7 +152,10 @@ const P = styled.p`
 const Index = () => {
   const lang = useLang()
   const translations = useTranslations(lang)
+  const { user } = useProvideAuth()
   const { index, footer, navigation } = translations
+
+  console.log(user)
 
   return (
     <Layout>
