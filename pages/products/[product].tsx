@@ -19,3 +19,10 @@ Product.getInitialProps = async () => {
 }
 
 export default Product
+
+// export const getServerSideProps = async (props: any) => {
+//   console.log(props)
+//   return {
+//     props: {}
+//   }
+// }
