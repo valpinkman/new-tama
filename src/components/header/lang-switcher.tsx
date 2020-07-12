@@ -11,7 +11,7 @@ const Wrapper = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 24px;
+  padding-left: 24px
 `
 
 const ExtraLangs = styled.div`
@@ -30,9 +30,11 @@ const Item = styled.div<{ onClick?: (l: Lang) => void; active?: boolean }>`
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
-  padding: 8px 0;
+  padding: 8px;
   text-decoration: ${p => p.active ? 'underline' : 'none'};
   text-align: right;
+  background-color: white;
+  margin-bottom: 1px;
 
   &:hover ${ExtraLangs} {
     top: 100%;

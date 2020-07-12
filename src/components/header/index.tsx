@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
+import { useSpring } from 'react-spring'
 import styled from 'styled-components'
 import Link from 'next/link'
 import { ORANGE, GREEN } from '../../styles/colors'
 import Logo from '../../icons/logo'
 import Nav from './nav'
 import LanguageSwitcher from './lang-switcher'
+import useMatchMedia from '../../hooks/use-match-media'
 
 const Container = styled.header`
   position: sticky;
@@ -15,6 +17,10 @@ const Container = styled.header`
   padding: 12px 24px;
   background-color: white;
   z-index: 1000;
+
+  @media (max-width: 900px) {
+    justify-content: center;
+  }
 `
 
 const NavWrapper = styled.div`
@@ -24,9 +30,13 @@ const NavWrapper = styled.div`
 const LogoContainer = styled.div`
   width: 96px;
   cursor: pointer;
+
+  @media (max-width: 900px) {
+    width: 64px;
+  }
 `
 
-function Header() {
+function HeaderDesktop() {
   return (
     <Container>
       <Link href="/">
@@ -40,6 +50,35 @@ function Header() {
       <LanguageSwitcher />
     </Container>
   )
+}
+
+const SideBar = () => {
+  return (
+    <Nav />
+  )
+}
+
+function HeaderMobile() {
+  // const [open, setOpen] = useState(false)
+
+  // const openMenu = useCallback(() => setOpen(true), [setOpen])
+  // const closeMenu = useCallback(() => setOpen(false), [setOpen])
+
+  return (
+    <>
+      <Container>
+        <LogoContainer>
+          <Logo color={ORANGE} hoverColor={GREEN} />
+        </LogoContainer>
+      </Container>
+      <SideBar />
+    </>
+  )
+}
+
+function Header() {
+  const small = useMatchMedia('(max-width: 900px)')
+  return small === null ? null : small ? <HeaderMobile /> : <HeaderDesktop />
 }
 
 export default Header

@@ -9,6 +9,11 @@ const Title = styled.h2`
   font-size: 36px;
   font-weight: 700;
   color: ${p => p.color || DARK_GRAY};
+
+  @media (max-width: 900px) {
+    margin: 24px 0;
+    font-size: 24px;
+  }
 `
 
 export default Title

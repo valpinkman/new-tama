@@ -6,6 +6,7 @@ import { useLang } from '../../hooks/use-lang'
 import { Lang } from '../../../types/lang'
 import routes, { Routes, Route } from '../../utils/routes'
 import { DARK_GRAY, GREEN } from '../../styles/colors'
+import useMatchMedia from '../../hooks/use-match-media'
 
 const omitted = ['article', 'signin', 'fresh', 'signup', 'product']
 const withOmitted = (lang: Lang, routes: Routes) =>
@@ -30,8 +31,38 @@ const A = styled.a<{ active?: boolean }>`
   }
 `
 
-function Nav() {
+function NavDesktop({ nav }: { nav: Array<{ src: string; title: string; key: string }> }) {
   const router = useRouter()
+
+  return (
+    <Wrapper>
+      {nav.map(({ src, title, key }: { src: string; title: string; key: string }) => (
+        <React.Fragment key={key}>
+          <Link href={src}>
+            <A active={router.asPath === src}>{title}</A>
+          </Link>
+        </React.Fragment>
+      ))}
+    </Wrapper>
+  )
+}
+
+const WrapperMobile = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+function NavMobile({ nav }: { nav: Array<{ src: string; title: string; key: string }> }) {
+  const router = useRouter()
+  return (
+    <WrapperMobile>
+
+    </WrapperMobile>
+  )
+}
+
+function Nav() {
+  const small = useMatchMedia('(max-width: 900px)')
   const lang = useLang()
 
   const [nav, setNav] = useState(() => {
@@ -50,17 +81,7 @@ function Nav() {
     }
   }, [lang, setNav])
 
-  return (
-    <Wrapper>
-      {nav.map(({ src, title, key }) => (
-        <React.Fragment key={key}>
-          <Link href={src}>
-            <A active={router.asPath === src}>{title}</A>
-          </Link>
-        </React.Fragment>
-      ))}
-    </Wrapper>
-  )
+  return small ? <NavMobile nav={nav} /> : <NavDesktop nav={nav} />
 }
 
 export default Nav

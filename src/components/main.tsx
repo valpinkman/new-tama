@@ -7,6 +7,10 @@ const Main = styled.main`
   margin: 32px auto;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 900px) {
+    margin: 16px auto;
+  }
 `
 
 export default Main

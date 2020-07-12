@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
-import { Carousel } from 'react-responsive-carousel'
+import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 import { ORANGE, DARK_GRAY, GOLD, GREEN, PINK, FACEBOOK, TWITTER, INSTAGRAM, YOUTUBE } from '../src/styles/colors'
 import Layout from '../src/components/layout'
@@ -17,10 +17,16 @@ import Facebook from '../src/icons/drawn/facebook'
 import Twitter from '../src/icons/drawn/twitter'
 import Instagram from '../src/icons/drawn/instagram'
 import Youtube from '../src/icons/drawn/youtube'
+import useMatchMedia from '../src/hooks/use-match-media'
+
+const Carousel = dynamic(
+  () => import('../src/components/carousel'),
+  { ssr: false }
+)
 
 
 const ImgTitle = styled.img`
-  max-width: 40px;
+  max-width: 48px;
   padding-right: 16px;
 `
 
@@ -31,6 +37,14 @@ const LogoContainer = styled.div`
 
   & svg {
     max-height: 320px;
+  }
+
+  @media (max-width: 900px) {
+    height: 200px;
+
+    & svg {
+      max-height: 200px;
+    }
   }
 `
 
@@ -64,6 +78,19 @@ const Tile = styled.div<{ baseColor: string; textColor?: string }>`
     background-color:  ${p => p.textColor || DARK_GRAY};
     border-color: ${p => p.baseColor};
    }
+
+   @media (max-width: 900px) {
+     width: 100%;
+     height: auto;
+     padding: 12px;
+     font-size: 20px;
+     margin-bottom: 12px;
+     border-radius: 8px;
+
+     &:last-child {
+       margin-bottom: 0;
+     }
+   }
 `
 
 const TileSocialBox = styled.div`
@@ -71,10 +98,28 @@ const TileSocialBox = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+`
+
+const SocialName = styled.span<{ hoverColor: string }>`
+  display: none;
+
+  color: white;
+  transition: all 250ms ease-out;
+
+  @media (max-width: 900px) {
+    display: block;
+    font-size: 24px;
+    font-weight: 500;
+  }
 `
 
 const TileSocial = styled.a<{ hoverColor: string }>`
   cursor: pointer;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,19 +134,51 @@ const TileSocial = styled.a<{ hoverColor: string }>`
     color: ${p => p.hoverColor};
     background-color: white;
     border-color: ${p => p.hoverColor};
+
+    ${SocialName} {
+      color: ${p => p.hoverColor};
+    }
+  }
+
+  @media (max-width: 900px) {
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    text-transform: uppercase;
+
+    ${SocialName} {
+      flex-basis: 75%;
+      text-align: center;
+    }
+
+    > * + * {
+      flex-basis: 25%;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 `
 
-const FloatingLink = styled.div`
+const FloatingLink = styled.p`
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 48px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 900px) {
+    padding: 0 24px;
+  }
 `
 
 const FloatingAStyle = styled.a`
@@ -111,6 +188,10 @@ const FloatingAStyle = styled.a`
   color: white;
   cursor: pointer;
   width: 100%;
+
+  @media (max-width: 900px) {
+    font-size: 24px;
+  }
 `
 
 const P = styled.p`
@@ -120,6 +201,10 @@ const P = styled.p`
   text-align: justify;
   text-align-last: center;
   color: ${DARK_GRAY};
+
+  @media (max-width: 900px) {
+    font-size: 16px;
+  }
 `
 
 const Index = () => {
@@ -127,32 +212,13 @@ const Index = () => {
   const translations = useTranslations(lang)
   const { user } = useProvideAuth()
   const { index, footer, navigation } = translations
-
-  console.log(user)
+  const small = useMatchMedia('(max-width: 900px)')
 
   return (
     <Layout>
       <Main>
         <Section>
-          <Title>
-            <LogoContainer>
-              <Logo color={ORANGE} />
-            </LogoContainer>
-          </Title>
-        </Section>
-        <Section>
-          <Carousel
-            autoPlay
-            swipeable={false}
-            emulateTouch
-            stopOnHover={false}
-            showStatus={false}
-            showIndicators={false}
-            showThumbs={false}
-            interval={4000}
-            transitionTime={1000}
-            infiniteLoop
-          >
+          <Carousel>
             <img src="/static/images/extras/extra-0.jpg" />
             <img src="/static/images/extras/extra-5.png" />
             <img src="/static/images/extras/extra-3.png" />
@@ -161,6 +227,11 @@ const Index = () => {
             <img src="/static/images/extras/extra-1.png" />
           </Carousel>
         </Section>
+        <Title>
+          <LogoContainer>
+            <Logo color={ORANGE} />
+          </LogoContainer>
+        </Title>
         <Section>
           <Title>
             <ImgTitle src="/static/images/index-drink.png" />
@@ -189,7 +260,7 @@ const Index = () => {
             <ImgTitle src="/static/images/index-blender.png" />
             {capitalize(index.blog.title)}
           </Title>
-          <Section>
+          <div style={{ position: 'relative' }}>
             <Link href={navigation.blog.route}>
               <FloatingAStyle>
                 <RoundImg src={index.blog.picture} />
@@ -198,25 +269,30 @@ const Index = () => {
                 </FloatingLink>
               </FloatingAStyle>
             </Link>
-          </Section>
+          </div>
         </Section>
         <Section>
           <Title>
             <ImgTitle src="/static/images/index-fruit.png" />
             {capitalize(index.follow)}
           </Title>
-          <TileSocialBox>            <TileSocial hoverColor={FACEBOOK} target="_blank" href="https://www.facebook.com/smoothiestamarindo">
-            <Facebook size={56} />
-          </TileSocial>
-          <TileSocial hoverColor={INSTAGRAM} target="_blank" href="https://www.instagram.com/smoothiestamarindo">
-            <Instagram size={56} />
-          </TileSocial>
-          <TileSocial hoverColor={TWITTER} target="_blank" href="https://twitter.com/TamaSmoothies">
-            <Twitter size={56} />
-          </TileSocial>
-          <TileSocial hoverColor={YOUTUBE} target="_blank" href="https://www.youtube.com/channel/UCM3kOD5OFLBlFhhfee3WPiA">
-            <Youtube size={56} />
-          </TileSocial>
+          <TileSocialBox>
+            <TileSocial hoverColor={FACEBOOK} target="_blank" href="https://www.facebook.com/smoothiestamarindo">
+              <SocialName hoverColor={FACEBOOK}>FACEBOOK</SocialName>
+              <Facebook size={small ? 28 : 56} />
+            </TileSocial>
+            <TileSocial hoverColor={INSTAGRAM} target="_blank" href="https://www.instagram.com/smoothiestamarindo">
+              <SocialName hoverColor={INSTAGRAM}>INSTAGRAM</SocialName>
+              <Instagram size={small ? 28 : 56} />
+            </TileSocial>
+            <TileSocial hoverColor={TWITTER} target="_blank" href="https://twitter.com/TamaSmoothies">
+              <SocialName hoverColor={TWITTER}>TWITTER</SocialName>
+              <Twitter size={small ? 28 : 56} />
+            </TileSocial>
+            <TileSocial hoverColor={YOUTUBE} target="_blank" href="https://www.youtube.com/channel/UCM3kOD5OFLBlFhhfee3WPiA">
+              <SocialName hoverColor={YOUTUBE}>YOUTUBE</SocialName>
+              <Youtube size={small ? 28 : 56} />
+            </TileSocial>
           </TileSocialBox>
         </Section>
         <Section>

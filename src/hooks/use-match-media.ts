@@ -2,7 +2,14 @@ import { useState, useEffect } from 'react'
 
 // pass a query like `(min-width: 768px)`
 const useMatchMedia = (query: string) => {
-  const [matches, setMatches] = useState(() => matchMedia(query).matches)
+  const [matches, setMatches] = useState(() => {
+    try {
+      return matchMedia(query).matches
+    } catch (err) {
+      console.log(err)
+      return null
+    }
+  })
 
   useEffect(() => {
     const mediaQueryList = matchMedia(query)
