@@ -1,50 +1,27 @@
 import React, { useEffect } from 'react'
+import Link from 'next/link'
 import { Carousel } from 'react-responsive-carousel'
+import styled from 'styled-components'
+import { ORANGE, DARK_GRAY, GOLD, GREEN, PINK, FACEBOOK, TWITTER, INSTAGRAM, YOUTUBE } from '../src/styles/colors'
 import Layout from '../src/components/layout'
 import Sign from '../src/components/user/sign'
-import Logo from '../src/icons/logo/round'
-import { ORANGE, DARK_GRAY, GOLD, GREEN, PINK, FACEBOOK, TWITTER, INSTAGRAM, YOUTUBE } from '../src/styles/colors'
-import styled from 'styled-components'
+import Main from '../src/components/main'
+import Title from '../src/components/title'
+import { RoundImg } from '../src/components/img'
+import Section from '../src/components/section'
 import { useTranslations, useLang } from '../src/hooks/use-lang'
+import { useProvideAuth } from '../src/hooks/use-firebase'
 import { capitalize } from '../src/utils/string'
-import Link from 'next/link'
+import Logo from '../src/icons/logo/round'
 import Facebook from '../src/icons/drawn/facebook'
 import Twitter from '../src/icons/drawn/twitter'
 import Instagram from '../src/icons/drawn/instagram'
 import Youtube from '../src/icons/drawn/youtube'
-import { useProvideAuth } from '../src/hooks/use-firebase'
 
-const Img = styled.img`
-  max-width: 100%;
-  width: 100%;
-`
-
-const RoundImg = styled(Img)`
-  border-radius: 16px;
-`
-
-const Title = styled.h2`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 48px 0;
-  font-size: 36px;
-  font-weight: 700;
-  color: ${DARK_GRAY};
-`
 
 const ImgTitle = styled.img`
   max-width: 40px;
   padding-right: 16px;
-`
-
-const Main = styled.main`
-  width: 100%;
-  max-width: 1280px;
-  padding: 0 12px;
-  margin: 32px auto;
-  display: flex;
-  flex-direction: column;
 `
 
 const LogoContainer = styled.div`
@@ -55,11 +32,6 @@ const LogoContainer = styled.div`
   & svg {
     max-height: 320px;
   }
-`
-
-const Section = styled.section`
-  margin-bottom: 32px;
-  position: relative;
 `
 
 const TileBox = styled.div`
@@ -145,7 +117,8 @@ const P = styled.p`
   font-size: 24px;
   font-weight: 500;
   line-height: 1.4;
-  text-align: center;
+  text-align: justify;
+  text-align-last: center;
   color: ${DARK_GRAY};
 `
 
@@ -170,7 +143,7 @@ const Index = () => {
         <Section>
           <Carousel
             autoPlay
-            swipeable
+            swipeable={false}
             emulateTouch
             stopOnHover={false}
             showStatus={false}

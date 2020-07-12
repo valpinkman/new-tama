@@ -42,7 +42,7 @@ export default {
         video: 'tG_95LzkXXo',
       },
       cocktail: {
-        heading: 'Fresh news! How to make a signature cocktail',
+        heading: 'How to make a signature cocktail',
         video: 'v8Fi9zPM9xE',
       },
     },

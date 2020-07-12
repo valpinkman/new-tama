@@ -43,7 +43,7 @@ export default {
         video: 'tG_95LzkXXo',
       },
       cocktail: {
-        heading: 'Novità, la preparazione dei Cocktails Signature',
+        heading: 'La preparazione dei Cocktails Signature',
         video: 'v8Fi9zPM9xE',
       },
     },
