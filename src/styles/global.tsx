@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     margin: 0;
-    height: 100%;
+    height: 100vh;
     font-family: Inter;
   }
 
@@ -23,8 +23,8 @@ const GlobalStyle = createGlobalStyle`
     font-style:  normal;
     font-weight: 400;
     font-display: swap;
-    src: url("static/fonts/inter/Inter-Regular.woff2?v=3.13") format("woff2"),
-        url("static/fonts/inter/Inter-Regular.woff?v=3.13") format("woff");
+    src: url("/static/fonts/inter/Inter-Regular.woff2?v=3.13") format("woff2"),
+        url("/static/fonts/inter/Inter-Regular.woff?v=3.13") format("woff");
   }
 
   @font-face {
@@ -32,8 +32,8 @@ const GlobalStyle = createGlobalStyle`
     font-style:  italic;
     font-weight: 400;
     font-display: swap;
-    src: url("static/fonts/inter/Inter-Italic.woff2?v=3.13") format("woff2"),
-        url("static/fonts/inter/Inter-Italic.woff?v=3.13") format("woff");
+    src: url("/static/fonts/inter/Inter-Italic.woff2?v=3.13") format("woff2"),
+        url("/static/fonts/inter/Inter-Italic.woff?v=3.13") format("woff");
   }
 
   @font-face {
@@ -50,8 +50,8 @@ const GlobalStyle = createGlobalStyle`
     font-style:  italic;
     font-weight: 500;
     font-display: swap;
-    src: url("static/fonts/inter/Inter-MediumItalic.woff2?v=3.13") format("woff2"),
-        url("static/fonts/inter/Inter-MediumItalic.woff?v=3.13") format("woff");
+    src: url("/static/fonts/inter/Inter-MediumItalic.woff2?v=3.13") format("woff2"),
+        url("/static/fonts/inter/Inter-MediumItalic.woff?v=3.13") format("woff");
   }
 
   @font-face {
@@ -59,8 +59,8 @@ const GlobalStyle = createGlobalStyle`
     font-style:  normal;
     font-weight: 600;
     font-display: swap;
-    src: url("static/fonts/inter/Inter-SemiBold.woff2?v=3.13") format("woff2"),
-        url("static/fonts/inter/Inter-SemiBold.woff?v=3.13") format("woff");
+    src: url("/static/fonts/inter/Inter-SemiBold.woff2?v=3.13") format("woff2"),
+        url("/static/fonts/inter/Inter-SemiBold.woff?v=3.13") format("woff");
   }
 
   @font-face {
@@ -68,8 +68,8 @@ const GlobalStyle = createGlobalStyle`
     font-style:  italic;
     font-weight: 600;
     font-display: swap;
-    src: url("static/fonts/inter/Inter-SemiBoldItalic.woff2?v=3.13") format("woff2"),
-        url("static/fonts/inter/Inter-SemiBoldItalic.woff?v=3.13") format("woff");
+    src: url("/static/fonts/inter/Inter-SemiBoldItalic.woff2?v=3.13") format("woff2"),
+        url("/static/fonts/inter/Inter-SemiBoldItalic.woff?v=3.13") format("woff");
   }
 
   @font-face {
@@ -77,8 +77,8 @@ const GlobalStyle = createGlobalStyle`
     font-style:  normal;
     font-weight: 700;
     font-display: swap;
-    src: url("static/fonts/inter/Inter-Bold.woff2?v=3.13") format("woff2"),
-        url("static/fonts/inter/Inter-Bold.woff?v=3.13") format("woff");
+    src: url("/static/fonts/inter/Inter-Bold.woff2?v=3.13") format("woff2"),
+        url("/static/fonts/inter/Inter-Bold.woff?v=3.13") format("woff");
   }
 
   @font-face {
@@ -86,8 +86,8 @@ const GlobalStyle = createGlobalStyle`
     font-style:  italic;
     font-weight: 700;
     font-display: swap;
-    src: url("static/fonts/inter/Inter-BoldItalic.woff2?v=3.13") format("woff2"),
-        url("static/fonts/inter/Inter-BoldItalic.woff?v=3.13") format("woff");
+    src: url("/static/fonts/inter/Inter-BoldItalic.woff2?v=3.13") format("woff2"),
+        url("/static/fonts/inter/Inter-BoldItalic.woff?v=3.13") format("woff");
   }
 `
 

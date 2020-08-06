@@ -96,7 +96,7 @@ const conf = {
         },
         {
           source: '/our-products',
-          destination: '/product'
+          destination: '/products'
         },
         {
           source: '/fresh-news/fresh/:fresh',

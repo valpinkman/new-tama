@@ -6,6 +6,7 @@ const Main = styled.main`
   padding: 0 12px;
   margin: 32px auto;
   display: flex;
+  flex: 1;
   flex-direction: column;
 
   @media (max-width: 900px) {

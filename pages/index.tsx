@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
@@ -9,7 +9,7 @@ import Main from '../src/components/main'
 import Title from '../src/components/title'
 import { RoundImg } from '../src/components/img'
 import Section from '../src/components/section'
-import { useTranslations, useLang } from '../src/hooks/use-lang'
+import { useTranslations } from '../src/hooks/use-lang'
 import { useProvideAuth } from '../src/hooks/use-firebase'
 import { capitalize } from '../src/utils/string'
 import Logo from '../src/icons/logo/round'
@@ -208,8 +208,7 @@ const P = styled.p`
 `
 
 const Index = () => {
-  const lang = useLang()
-  const translations = useTranslations(lang)
+  const translations = useTranslations()
   const { user } = useProvideAuth()
   const { index, footer, navigation } = translations
   const small = useMatchMedia('(max-width: 900px)')

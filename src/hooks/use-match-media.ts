@@ -6,8 +6,7 @@ const useMatchMedia = (query: string) => {
     try {
       return matchMedia(query).matches
     } catch (err) {
-      console.log(err)
-      return null
+      return false
     }
   })
 

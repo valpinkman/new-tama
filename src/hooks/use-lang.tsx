@@ -57,7 +57,8 @@ export const ProviderLang = ({ children }: { children: React.ReactNode }) => {
   )
 }
 
-export const useTranslations = (lang: MaybeLang = 'fr') => {
+export const useTranslations = () => {
+  const lang = useLang()
   const [current, setCurrent] = useState<Translations>(() => langs[lang || 'fr'])
 
   useEffect(() => {

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import dynamic from 'next/dynamic'
 import Layout from '../src/components/layout'
 import Sign from '../src/components/user/sign'
-import { useTranslations, useLang } from '../src/hooks/use-lang'
+import { useTranslations } from '../src/hooks/use-lang'
 import { DARK_GRAY, GREEN } from '../src/styles/colors'
 import Main from '../src/components/main'
 import Title from '../src/components/title'
@@ -66,8 +66,7 @@ const Center = styled.div`
 
 
 const About = (props: any) => {
-  const lang = useLang()
-  const translations = useTranslations(lang)
+  const translations = useTranslations()
   const { about } = translations
   const small = useMatchMedia('(max-width: 900px)')
   const [width, setWidth] = useState(() => {
@@ -137,15 +136,6 @@ const About = (props: any) => {
       </div>
     </Layout>
   )
-}
-
-About.getInitialProps = async () => {
-  await new Promise(res => {
-    setTimeout(() => res(), 5000)
-  })
-  return {
-    page: 'about',
-  }
 }
 
 export default About

@@ -53,89 +53,284 @@ export default {
     description: 'Blog Smoothies Tamarindo, les Fraîches News',
   },
   cocktails: {
-    smoothies: [
-      {
-        name: 'ultra violet',
-        fruits: 'fraise, banane, myrtille',
-        picture: '/static/images/cocktails/smoothies/ultra-violet.png',
-        illustration: '/static/images/cocktails/smoothies/ultra-violet-fruits.png',
-        color: 'ULTRA_VIOLET',
-      },
-      {
-        name: 'exotic',
-        fruits: 'mangue, ananas, fruit de la passion',
-        picture: '/static/images/cocktails/smoothies/exotic.png',
-        illustration: '/static/images/cocktails/smoothies/exotic-fruits.png',
-        color: 'EXOTIC',
-      },
-      {
-        name: 'coco mango',
-        fruits: 'mangue, fraise, coco',
-        picture: '/static/images/cocktails/smoothies/coco-mango.png',
-        illustration: '/static/images/cocktails/smoothies/coco-mango-fruits.png',
-        color: 'COCO_MANGO',
-      },
-      {
-        name: 'tropical',
-        fruits: 'mangue, ananas, citron vert',
-        picture: '/static/images/cocktails/smoothies/tropical.png',
-        illustration: '/static/images/cocktails/smoothies/tropical-fruits.png',
-        color: 'TROPICAL',
-      },
-      {
-        name: 'fresh',
-        fruits: 'fraise, orange, menthe fraîche',
-        picture: '/static/images/cocktails/smoothies/fresh.png',
-        illustration: '/static/images/cocktails/smoothies/fresh-fruits.png',
-        color: 'FRESH',
-      },
-      {
-        name: 'melon pop',
-        fruits: 'pastèque, melon, framboise, citron vert',
-        picture: '/static/images/cocktails/smoothies/melon-pop.png',
-        illustration: '/static/images/cocktails/smoothies/melon-pop-fruits.png',
-        color: 'MELON_POP',
-      },
-    ],
-    greens: [
-      {
-        name: 'green splash',
-        fruits: 'pomme verte, poire, épinard, banane, citron vert, basilic',
-        picture: '/static/images/cocktails/greens/green-splash.png',
-        illustration: '/static/images/cocktails/greens/green-splash-fruits.png',
-        color: 'GREEN_SPLASH',
-      },
-      {
-        name: 'boost',
-        fruits: 'orange, mangue, carotte, citron vert, gingembre',
-        picture: '/static/images/cocktails/greens/boost.png',
-        illustration: '/static/images/cocktails/greens/boost-fruits.png',
-        color: 'BOOST',
-      },
-    ],
-    signature: [
-      {
-        name: 'mungo jerry',
-        fruits: 'mangue, fraise, coco',
-        sirup: 'mungo jerry',
-        alcohol: 'vodka',
-        picture: '/static/images/cocktails/signature/mungo-jerry.png',
-      },
-      {
-        name: 'pura vida',
-        fruits: 'mangue, ananas, citron vert',
-        sirup: 'pura vida',
-        alcohol: 'rhum',
-        picture: '/static/images/cocktails/signature/pura-vida.png',
-      },
-      {
-        name: 'summer pop',
-        fruits: 'pastèque, melon, framboise, citron vert',
-        sirup: 'summer pop',
-        alcohol: 'vodka',
-        picture: '/static/images/cocktails/signature/summer-pop.png',
-      },
-    ],
+    smoothies: {
+      tagline: [
+        'Le Smoothie Tamarindo',
+        'Une boisson onctueuse, rafraîchissante, savoureuse et totalement naturelle !',
+      ],
+      title: "Les Smoothies",
+      path: '/nos-produits/smoothies',
+      products:  [
+        {
+          name: 'ultra violet',
+          fruits: [
+            {
+              name: 'fraise',
+              img: 'strawberry',
+            },
+            {
+              name: 'banane',
+              img: 'banana',
+            },
+            {
+              name: 'myrtille',
+              img: 'blueberry',
+            },
+          ],
+          picture: '/static/images/cocktails/smoothies/ultra-violet.png',
+          illustration: '/static/images/cocktails/smoothies/ultra-violet-fruits.png',
+          color: 'ULTRA_VIOLET',
+        },
+        {
+          name: 'exotic',
+          fruits: [
+            {
+              name: 'mangue',
+              img: 'mango',
+            },
+            {
+              name: 'ananas',
+              img: 'pineapple',
+            },
+            {
+              name: 'fruit de la passion',
+              img: 'passion',
+            },
+          ],
+          picture: '/static/images/cocktails/smoothies/exotic.png',
+          illustration: '/static/images/cocktails/smoothies/exotic-fruits.png',
+          color: 'EXOTIC',
+        },
+        {
+          name: 'coco mango',
+          fruits: [
+            {
+              name: 'mangue',
+              img: 'mango',
+            },
+            {
+              name: 'fraise',
+              img: 'strawberry',
+            },
+            {
+              name: 'coco',
+              img: 'coconut',
+            },
+          ],
+          picture: '/static/images/cocktails/smoothies/coco-mango.png',
+          illustration: '/static/images/cocktails/smoothies/coco-mango-fruits.png',
+          color: 'COCO_MANGO',
+        },
+        {
+          name: 'tropical',
+          fruits: [
+            {
+              name: 'mangue',
+              img: 'mango',
+            },
+            {
+              name: 'ananas',
+              img: 'pineapple',
+            },
+            {
+              name: 'citron vert',
+              img: 'lime',
+            },
+          ],
+          picture: '/static/images/cocktails/smoothies/tropical.png',
+          illustration: '/static/images/cocktails/smoothies/tropical-fruits.png',
+          color: 'TROPICAL',
+        },
+        {
+          name: 'fresh',
+          fruits: [
+            {
+              name: 'fraise',
+              img: 'strawberry',
+            },
+            {
+              name: 'orange',
+              img: 'orange',
+            },
+            {
+              name: 'menthe fraîche',
+              img: 'mint',
+            },
+          ],
+          picture: '/static/images/cocktails/smoothies/fresh.png',
+          illustration: '/static/images/cocktails/smoothies/fresh-fruits.png',
+          color: 'FRESH',
+        },
+        {
+          name: 'melon pop',
+          fruits: [
+            {
+              name: 'pastèque',
+              img: 'watermelon',
+            },
+            {
+              name: 'melon',
+              img: 'melon',
+            },
+            {
+              name: 'framboise',
+              img: 'raspberry',
+            },
+            {
+              name: 'citron vert',
+              img: 'lime',
+            },
+          ],
+          picture: '/static/images/cocktails/smoothies/melon-pop.png',
+          illustration: '/static/images/cocktails/smoothies/melon-pop-fruits.png',
+          color: 'MELON_POP',
+        },
+      ],
+    },
+    greens: {
+      tagline: [
+        '2 Nouvelles recettes Detox et énergie à base de fruits & légumes',
+        'Apports en vitamines A, B, C, E en fer et antioxydants',
+      ],
+      title: "Les Greens",
+      path: '/nos-produits/greens',
+      products: [
+        {
+          name: 'green splash',
+          fruits: [
+            {
+              name: 'pomme verte',
+              img: 'apple',
+            },
+            {
+              name: 'poire',
+              img: 'pear',
+            },
+            {
+              name: 'épinard',
+              img: 'spinach',
+            },
+            {
+              name: 'banane',
+              img: 'banana',
+            },
+            {
+              name: 'citron vert',
+              img: 'lime',
+            },
+            {
+              name: 'basilic',
+              img: 'basil',
+            },
+          ],
+          picture: '/static/images/cocktails/greens/green-splash.png',
+          illustration: '/static/images/cocktails/greens/green-splash-fruits.png',
+          color: 'GREEN_SPLASH',
+        },
+        {
+          name: 'boost',
+          fruits: [
+            {
+              name: 'orange',
+              img: 'orange',
+            },
+            {
+              name: 'mangue',
+              img: 'mango',
+            },
+            {
+              name: 'carotte',
+              img: 'carrot',
+            },
+            {
+              name: 'citron vert',
+              img: 'lime',
+            },
+            {
+              name: 'gingembre',
+              img: 'ginger',
+            },
+          ],
+          picture: '/static/images/cocktails/greens/boost.png',
+          illustration: '/static/images/cocktails/greens/boost-fruits.png',
+          color: 'BOOST',
+        },
+      ],
+    },
+    signature: {
+      tagline: [
+        'Rapidité, facilité d’exécution et exclusivité',
+        'Voici notre solution simplissime pour préparer les cocktails Tamarindo Signature Collection',
+      ],
+      title: "Les Cocktails Signature",
+      path: '/nos-produits/signature',
+      products: [
+        {
+          name: 'mungo jerry',
+          fruits: [
+            {
+              name: 'mangue',
+              img: 'mango',
+            },
+            {
+              name: 'fraise',
+              img: 'strawberry',
+            },
+            {
+              name: 'coco',
+              img: 'coconut',
+            },
+          ],
+          syrup: 'mungo jerry',
+          alcohol: 'vodka',
+          picture: '/static/images/cocktails/signature/mungo-jerry.png',
+        },
+        {
+          name: 'pura vida',
+          fruits: [
+            {
+              name: 'mangue',
+              img: 'mango',
+            },
+            {
+              name: 'ananas',
+              img: 'pineapple',
+            },
+            {
+              name: 'citron vert',
+              img: 'lime',
+            },
+          ],
+          syrup: 'pura vida',
+          alcohol: 'rhum',
+          picture: '/static/images/cocktails/signature/pura-vida.png',
+        },
+        {
+          name: 'summer pop',
+          fruits: [
+            {
+              name: 'pastèque',
+              img: 'watermelon',
+            },
+            {
+              name: 'melon',
+              img: 'melon',
+            },
+            {
+              name: 'framboise',
+              img: 'raspberry',
+            },
+            {
+              name: 'citron vert',
+              img: 'lime',
+            },
+          ],
+          syrup: 'summer pop',
+          alcohol: 'vodka',
+          picture: '/static/images/cocktails/signature/summer-pop.png',
+        },
+      ],
+    },
   },
   date: {
     dateFormat: 'D MMMM YYYY',
@@ -522,43 +717,38 @@ export default {
   products: {
     pageTitle: 'Produits - Smoothies Tamarindo',
     title: 'Nos Produits',
+    content: "Contenu",
     description: 'Découvrez les smoothies et cocktails Tamarindo',
-    sirup: 'sirop',
+    syrup: 'sirop',
     alcohol: 'avec alcool',
     noalcohol: 'sans alcool',
     tabs: [
       {
         name: 'smoothies',
-        route: 'produit',
+        path: '/nos-produits/smoothies',
         tagline: [
           'Le Smoothie Tamarindo',
           'Une boisson onctueuse, rafraîchissante, savoureuse et totalement naturelle !',
         ],
-        params: {
-          slug: 'smoothies',
-        },
+        img: "/static/images/thumbs/smoothies.png"
       },
       {
         name: 'greens',
-        route: 'produit',
+        path: '/nos-produits/greens',
         tagline: [
           '2 Nouvelles recettes Detox et énergie à base de fruits & légumes',
           'Apports en vitamines A, B, C, E en fer et antioxydants',
         ],
-        params: {
-          slug: 'greens',
-        },
+        img: "/static/images/thumbs/greens.png"
       },
       {
         name: 'signature',
+        path: '/nos-produits/signature',
         tagline: [
           'Rapidité, facilité d’exécution et exclusivité',
           'Voici notre solution simplissime pour préparer les cocktails Tamarindo Signature Collection Inédite 2018',
         ],
-        route: 'produit',
-        params: {
-          slug: 'signature',
-        },
+        img: "/static/images/thumbs/signature.png"
       },
     ],
   },

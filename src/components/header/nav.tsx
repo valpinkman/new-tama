@@ -8,7 +8,7 @@ import routes, { Routes, Route } from '../../utils/routes'
 import { DARK_GRAY, GREEN } from '../../styles/colors'
 import useMatchMedia from '../../hooks/use-match-media'
 
-const omitted = ['article', 'signin', 'fresh', 'signup', 'product']
+const omitted = ['article', 'signin', 'fresh', 'signup', 'product', 'news', 'pro']
 const withOmitted = (lang: Lang, routes: Routes) =>
   routes[lang].filter((route: Route) => !omitted.includes(route.key))
 
