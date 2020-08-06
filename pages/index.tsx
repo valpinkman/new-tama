@@ -237,17 +237,17 @@ const Index = () => {
             {capitalize(index.discover.title)}
           </Title>
           <TileBox>
-            <Link href={navigation.cocktail.route}>
+            <Link href={`${navigation.cocktail.route}smoothies`}>
               <Tile baseColor={ORANGE} textColor="white">
                 {capitalize(index.discover.first.title)}
               </Tile>
             </Link>
-            <Link href={navigation.cocktail.route}>
+            <Link href={`${navigation.cocktail.route}greens`}>
               <Tile baseColor={GREEN} textColor="white">
                 {capitalize(index.discover.third.title)}
               </Tile>
             </Link>
-            <Link href={navigation.cocktail.route}>
+            <Link href={`${navigation.cocktail.route}signature`}>
               <Tile baseColor={GOLD} textColor="white">
                 {capitalize(index.discover.second.title)}
               </Tile>

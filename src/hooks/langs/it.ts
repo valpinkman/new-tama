@@ -474,7 +474,7 @@ export default {
     cocktail: {
       name: 'prodotto',
       title: 'i nostri prodotti',
-      route: '/prodotti/[product]',
+      route: '/prodotti/',
       page: 'products',
     },
     blog: {

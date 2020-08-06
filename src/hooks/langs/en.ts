@@ -482,7 +482,7 @@ export default {
     },
     cocktail: {
       name: 'product',
-      route: '/our-products/[product]',
+      route: '/our-products/',
       page: 'products',
       title: 'our smoothies',
     },

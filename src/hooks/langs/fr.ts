@@ -483,7 +483,7 @@ export default {
     },
     cocktail: {
       name: 'produit',
-      route: '/nos-produits/[product]',
+      route: '/nos-produits/',
       page: 'products',
       title: 'nos smoothies',
     },
