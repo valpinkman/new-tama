@@ -44,112 +44,110 @@ const conf = {
     FB_API_KEY: process.env.FB_API_KEY,
     WORDPRESS_ENDPOINT: process.env.WORDPRESS_ENDPOINT
   },
-  experimental: {
-    async rewrites() {
-      return [
-        // French Routes
-        {
-          source: '/notre-concept',
-          destination: '/about'
-        },
-        {
-          source: '/nos-produits/:product',
-          destination: '/products/:product'
-        },
-        {
-          source: '/nos-produits',
-          destination: '/products'
-        },
-        {
-          source: '/fraiches-news/fraiche/:fresh',
-          destination: '/blog/:fresh'
-        },
-        {
-          source: '/fraiches-news',
-          destination: '/blog'
-        },
-        {
-          source: '/boutique',
-          destination: 'https://shop.smoothiestamarindo.com'
-        },
-        {
-          source: '/espace-pro',
-          destination: '/pro'
-        },
-        {
-          source: '/connexion',
-          destination: '/signin'
-        },
-        {
-          source: '/inscription',
-          destination: '/signup'
-        },
+  async rewrites() {
+    return [
+      // French Routes
+      {
+        source: '/notre-concept',
+        destination: '/about'
+      },
+      {
+        source: '/nos-produits/:product',
+        destination: '/products/:product'
+      },
+      {
+        source: '/nos-produits',
+        destination: '/products'
+      },
+      {
+        source: '/fraiches-news/fraiche/:fresh',
+        destination: '/blog/:fresh'
+      },
+      {
+        source: '/fraiches-news',
+        destination: '/blog'
+      },
+      {
+        source: '/boutique',
+        destination: 'https://shop.smoothiestamarindo.com'
+      },
+      {
+        source: '/espace-pro',
+        destination: '/pro'
+      },
+      {
+        source: '/connexion',
+        destination: '/signin'
+      },
+      {
+        source: '/inscription',
+        destination: '/signup'
+      },
 
-        // English Routes
-        {
-          source: '/our-concept',
-          destination: '/about'
-        },
-        {
-          source: '/our-products/:product',
-          destination: '/products/:product'
-        },
-        {
-          source: '/our-products',
-          destination: '/products'
-        },
-        {
-          source: '/fresh-news/fresh/:fresh',
-          destination: '/blog/:fresh'
-        },
-        {
-          source: '/fresh-news',
-          destination: '/blog'
-        },
-        {
-          source: '/shop',
-          destination: 'https://shop.smoothiestamarindo.com'
-        },
+      // English Routes
+      {
+        source: '/our-concept',
+        destination: '/about'
+      },
+      {
+        source: '/our-products/:product',
+        destination: '/products/:product'
+      },
+      {
+        source: '/our-products',
+        destination: '/products'
+      },
+      {
+        source: '/fresh-news/fresh/:fresh',
+        destination: '/blog/:fresh'
+      },
+      {
+        source: '/fresh-news',
+        destination: '/blog'
+      },
+      {
+        source: '/shop',
+        destination: 'https://shop.smoothiestamarindo.com'
+      },
 
-        // Italian Routes
-        {
-          source: '/concetto',
-          destination: '/about'
-        },
-        {
-          source: '/prodotti/:product',
-          destination: '/products/:product'
-        },
-        {
-          source: '/prodotti',
-          destination: '/products'
-        },
-        {
-          source: '/notizie-fresche/fresca/:fresh',
-          destination: '/blog/:fresh'
-        },
-        {
-          source: '/notizie-fresche',
-          destination: '/blog'
-        },
-        {
-          source: '/negozio',
-          destination: 'https://shop.smoothiestamarindo.com'
-        },
-        {
-          source: '/sezione-pro',
-          destination: '/pro'
-        },
-        {
-          source: '/connessione',
-          destination: '/signin'
-        },
-        {
-          source: '/iscrizione',
-          destination: '/signup'
-        },
-      ]
-    }
+      // Italian Routes
+      {
+        source: '/concetto',
+        destination: '/about'
+      },
+      {
+        source: '/prodotti/:product',
+        destination: '/products/:product'
+      },
+      {
+        source: '/prodotti',
+        destination: '/products'
+      },
+      {
+        source: '/notizie-fresche/fresca/:fresh',
+        destination: '/blog/:fresh'
+      },
+      {
+        source: '/notizie-fresche',
+        destination: '/blog'
+      },
+      {
+        source: '/negozio',
+        destination: 'https://shop.smoothiestamarindo.com'
+      },
+      {
+        source: '/sezione-pro',
+        destination: '/pro'
+      },
+      {
+        source: '/connessione',
+        destination: '/signin'
+      },
+      {
+        source: '/iscrizione',
+        destination: '/signup'
+      },
+    ]
   }
 }
 
