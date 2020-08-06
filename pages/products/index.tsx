@@ -85,17 +85,17 @@ const Products = () => {
           <Subtitle>{products.description}</Subtitle>
 
           <TileBox>
-            <Link href={navigation.cocktail.route} as={`${navigation.products.route}/smoothies`}>
+            <Link href={navigation.cocktail.route}>
               <Tile baseColor={ORANGE} textColor="white">
                 {capitalize(index.discover.first.title)}
               </Tile>
             </Link>
-            <Link href={navigation.cocktail.route} as={`${navigation.products.route}/greens`}>
+            <Link href={navigation.cocktail.route}>
               <Tile baseColor={GREEN} textColor="white">
                 {capitalize(index.discover.third.title)}
               </Tile>
             </Link>
-            <Link href={navigation.cocktail.route} as={`${navigation.products.route}/signature`}>
+            <Link href={navigation.cocktail.route}>
               <Tile baseColor={GOLD} textColor="white">
                 {capitalize(index.discover.second.title)}
               </Tile>
