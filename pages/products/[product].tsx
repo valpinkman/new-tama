@@ -164,14 +164,17 @@ const Product = () => {
   const translations = useTranslations()
   const { cocktails, products: productsLang } = translations
 
+  console.log(router)
+
   const [name] = router.asPath.split('/').slice(-1)
+  console.log(cocktails[name])
   const currCocktail = cocktails[name]
-  const products = currCocktail.products.map((p: { name: string }) => p.name)
+  const products = currCocktail ? currCocktail.products.map((p: { name: string }) => p.name) : 'smoothies'
 
   const [active, setActive] = useState(() =>products[0])
 
   const items = Object.keys(cocktails).map((key: string) => ({ name: key, path: cocktails[key].path  }))
-  const activeProduct = currCocktail.products.find((p: any) => p.name === active)
+  const activeProduct = currCocktail ? currCocktail.products.find((p: any) => p.name === active) : null
 
   return (
     <Layout>
