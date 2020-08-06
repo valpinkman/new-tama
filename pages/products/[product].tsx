@@ -176,6 +176,8 @@ const Product = () => {
   const items = Object.keys(cocktails).map((key: string) => ({ name: key, path: cocktails[key].path  }))
   const activeProduct = currCocktail ? currCocktail.products.find((p: any) => p.name === active) : null
 
+  if (!activeProduct) return null
+
   return (
     <Layout>
       <Main>
