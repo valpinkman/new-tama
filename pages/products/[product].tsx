@@ -221,7 +221,7 @@ const Product = () => {
   )
 }
 
-export const getServerSideProps = async (props) => {
+export const getServerSideProps = async (props: any) => {
   return {
     props: {
       query: props.query
