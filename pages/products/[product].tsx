@@ -223,15 +223,9 @@ const Product = () => {
   )
 }
 
-// export const getServerSideProps = async () => {
-//   return {
-//     props: {}
-//   }
-// }
-
-Product.getInitialProps = async () => {
+export const getServerSideProps = async () => {
   return {
-    page: 'produit',
+    props: {}
   }
 }
 
