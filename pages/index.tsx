@@ -254,7 +254,7 @@ const Index = () => {
             </Link>
           </TileBox>
         </Section>
-        <Section>
+        {/* <Section>
           <Title>
             <ImgTitle src="/static/images/index-blender.png" />
             {capitalize(index.blog.title)}
@@ -269,7 +269,7 @@ const Index = () => {
               </FloatingAStyle>
             </Link>
           </div>
-        </Section>
+        </Section> */}
         <Section>
           <Title>
             <ImgTitle src="/static/images/index-fruit.png" />

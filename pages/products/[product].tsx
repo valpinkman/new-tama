@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useRouter, NextRouter } from 'next/router'
-import sample from 'lodash/sample'
+import { useRouter } from 'next/router'
 import Layout from '../../src/components/layout'
 import Main from '../../src/components/main'
 import Title from '../../src/components/title'
@@ -212,7 +211,6 @@ const Product = () => {
                   <SubTitle>{`${capitalize(activeProduct.syrup)}`}</SubTitle>
                   <Syrup>{`+ ${productsLang.alcohol}`}</Syrup>
                   <SubTitle>{`${capitalize(activeProduct.alcohol)}`}</SubTitle>
-                  {/* <Alcohol></Alcohol> */}
                 </>
               ) : null}
             </Meta>
@@ -223,9 +221,11 @@ const Product = () => {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (props) => {
   return {
-    props: {}
+    props: {
+      query: props.query
+    }
   }
 }
 
