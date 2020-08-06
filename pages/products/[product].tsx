@@ -163,11 +163,7 @@ const Product = () => {
   const router = useRouter()
   const translations = useTranslations()
   const { cocktails, products: productsLang } = translations
-
-  console.log(router)
-
   const [name] = router.asPath.split('/').slice(-1)
-  console.log(cocktails[name])
   const currCocktail = cocktails[name]
   const products = currCocktail ? currCocktail.products.map((p: { name: string }) => p.name) : 'smoothies'
 
