@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 import { ORANGE, DARK_GRAY, GOLD, GREEN, PINK, FACEBOOK, TWITTER, INSTAGRAM, YOUTUBE } from '../src/styles/colors'
 import Layout from '../src/components/layout'
-import Sign from '../src/components/user/sign'
+// import Sign from '../src/components/user/sign'
 import Main from '../src/components/main'
 import Title from '../src/components/title'
 import { RoundImg } from '../src/components/img'
@@ -304,9 +304,6 @@ const Index = () => {
           <P>{index.testimony}</P>
         </Section>
       </Main>
-      <div>
-        <Sign />
-      </div>
     </Layout>
   )
 }

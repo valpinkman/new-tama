@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import dynamic from 'next/dynamic'
 import Layout from '../src/components/layout'
-import Sign from '../src/components/user/sign'
+// import Sign from '../src/components/user/sign'
 import { useTranslations } from '../src/hooks/use-lang'
 import { DARK_GRAY, GREEN } from '../src/styles/colors'
 import Main from '../src/components/main'
@@ -131,9 +131,6 @@ const About = (props: any) => {
           </Center>
         </Section>
       </Main>
-      <div>
-        <Sign />
-      </div>
     </Layout>
   )
 }
