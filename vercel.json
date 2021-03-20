@@ -8,8 +8,7 @@
   },
   "builds": [
     {
-      "src": "package.json",
-      "use": "@now/next"
+      "src": "package.json"
     }
   ]
 }
