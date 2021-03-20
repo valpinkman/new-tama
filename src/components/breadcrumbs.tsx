@@ -49,7 +49,7 @@ const BreadcrumbsLink = ({ current, items }: Props) => {
           <Link href={path}>
             <A active={name === current}>{capitalize(name)}</A>
           </Link>
-          {i !== arr.length - 1 ? <Spacer></Spacer> : null }
+          {i !== arr.length - 1 ? <Spacer /> : null }
         </React.Fragment>
       ))}
     </Container>
