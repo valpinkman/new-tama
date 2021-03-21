@@ -1,29 +1,37 @@
-import React from 'react'
-import Link from 'next/link'
-import dynamic from 'next/dynamic'
-import styled from 'styled-components'
-import { ORANGE, DARK_GRAY, GOLD, GREEN, PINK, FACEBOOK, TWITTER, INSTAGRAM, YOUTUBE } from '../src/styles/colors'
-import Layout from '../src/components/layout'
+import React from "react"
+import Link from "next/link"
+import dynamic from "next/dynamic"
+import styled from "styled-components"
+import {
+  ORANGE,
+  DARK_GRAY,
+  GOLD,
+  GREEN,
+  PINK,
+  FACEBOOK,
+  TWITTER,
+  INSTAGRAM,
+  YOUTUBE,
+} from "../src/styles/colors"
+import Layout from "../src/components/layout"
 // import Sign from '../src/components/user/sign'
-import Main from '../src/components/main'
-import Title from '../src/components/title'
-import { RoundImg } from '../src/components/img'
-import Section from '../src/components/section'
-import { useTranslations } from '../src/hooks/use-lang'
-import { useProvideAuth } from '../src/hooks/use-firebase'
-import { capitalize } from '../src/utils/string'
-import Logo from '../src/icons/logo/round'
-import Facebook from '../src/icons/drawn/facebook'
-import Twitter from '../src/icons/drawn/twitter'
-import Instagram from '../src/icons/drawn/instagram'
-import Youtube from '../src/icons/drawn/youtube'
-import useMatchMedia from '../src/hooks/use-match-media'
+import Main from "../src/components/main"
+import Title from "../src/components/title"
+import { RoundImg } from "../src/components/img"
+import Section from "../src/components/section"
+import { useTranslations } from "../src/hooks/use-lang"
+import { useProvideAuth } from "../src/hooks/use-firebase"
+import { capitalize } from "../src/utils/string"
+import Logo from "../src/icons/logo/round"
+import Facebook from "../src/icons/drawn/facebook"
+import Twitter from "../src/icons/drawn/twitter"
+import Instagram from "../src/icons/drawn/instagram"
+import Youtube from "../src/icons/drawn/youtube"
+import useMatchMedia from "../src/hooks/use-match-media"
 
-const Carousel = dynamic(
-  () => import('../src/components/carousel'),
-  { ssr: false }
-)
-
+const Carousel = dynamic(() => import("../src/components/carousel"), {
+  ssr: false,
+})
 
 const ImgTitle = styled.img`
   max-width: 48px;
@@ -57,40 +65,40 @@ const TileBox = styled.div`
 `
 
 const Tile = styled.div<{ baseColor: string; textColor?: string }>`
-   width: 320px;
-   height: 320px;
-   padding: 20px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   text-align: center;
-   color: ${p => p.textColor || DARK_GRAY};
-   background-color: ${p => p.baseColor};
-   font-size: 32px;
-   font-weight: 600;
-   border-radius: 16px;
-   transition: all 500ms ease-out;
-   cursor: pointer;
-   border: 4px solid transparent;
+  width: 320px;
+  height: 320px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: ${(p) => p.textColor || DARK_GRAY};
+  background-color: ${(p) => p.baseColor};
+  font-size: 32px;
+  font-weight: 600;
+  border-radius: 16px;
+  transition: all 500ms ease-out;
+  cursor: pointer;
+  border: 4px solid transparent;
 
-   &:hover {
-    color: ${p => p.baseColor};
-    background-color:  ${p => p.textColor || DARK_GRAY};
-    border-color: ${p => p.baseColor};
-   }
+  &:hover {
+    color: ${(p) => p.baseColor};
+    background-color: ${(p) => p.textColor || DARK_GRAY};
+    border-color: ${(p) => p.baseColor};
+  }
 
-   @media (max-width: 900px) {
-     width: 100%;
-     height: auto;
-     padding: 12px;
-     font-size: 20px;
-     margin-bottom: 12px;
-     border-radius: 8px;
+  @media (max-width: 900px) {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    font-size: 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
 
-     &:last-child {
-       margin-bottom: 0;
-     }
-   }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 `
 
 const TileSocialBox = styled.div`
@@ -125,18 +133,18 @@ const TileSocial = styled.a<{ hoverColor: string }>`
   align-items: center;
   border-radius: 16px;
   color: white;
-  background-color: ${p => p.hoverColor};
+  background-color: ${(p) => p.hoverColor};
   transition: all 250ms ease-out;
   border: 4px solid transparent;
   padding: 32px;
 
   &:hover {
-    color: ${p => p.hoverColor};
+    color: ${(p) => p.hoverColor};
     background-color: white;
-    border-color: ${p => p.hoverColor};
+    border-color: ${(p) => p.hoverColor};
 
     ${SocialName} {
-      color: ${p => p.hoverColor};
+      color: ${(p) => p.hoverColor};
     }
   }
 
@@ -211,7 +219,7 @@ const Index = () => {
   const translations = useTranslations()
   const { user } = useProvideAuth()
   const { index, footer, navigation } = translations
-  const small = useMatchMedia('(max-width: 900px)')
+  const small = useMatchMedia("(max-width: 900px)")
 
   return (
     <Layout>
@@ -276,30 +284,47 @@ const Index = () => {
             {capitalize(index.follow)}
           </Title>
           <TileSocialBox>
-            <TileSocial hoverColor={FACEBOOK} target="_blank" href="https://www.facebook.com/smoothiestamarindo">
+            <TileSocial
+              hoverColor={FACEBOOK}
+              target="_blank"
+              href="https://www.facebook.com/smoothiestamarindo"
+            >
               <SocialName hoverColor={FACEBOOK}>FACEBOOK</SocialName>
               <Facebook size={small ? 28 : 56} />
             </TileSocial>
-            <TileSocial hoverColor={INSTAGRAM} target="_blank" href="https://www.instagram.com/smoothiestamarindo">
+            <TileSocial
+              hoverColor={INSTAGRAM}
+              target="_blank"
+              href="https://www.instagram.com/smoothiestamarindo"
+            >
               <SocialName hoverColor={INSTAGRAM}>INSTAGRAM</SocialName>
               <Instagram size={small ? 28 : 56} />
             </TileSocial>
-            <TileSocial hoverColor={TWITTER} target="_blank" href="https://twitter.com/TamaSmoothies">
+            <TileSocial
+              hoverColor={TWITTER}
+              target="_blank"
+              href="https://twitter.com/TamaSmoothies"
+            >
               <SocialName hoverColor={TWITTER}>TWITTER</SocialName>
               <Twitter size={small ? 28 : 56} />
             </TileSocial>
-            <TileSocial hoverColor={YOUTUBE} target="_blank" href="https://www.youtube.com/channel/UCM3kOD5OFLBlFhhfee3WPiA">
+            <TileSocial
+              hoverColor={YOUTUBE}
+              target="_blank"
+              href="https://www.youtube.com/channel/UCM3kOD5OFLBlFhhfee3WPiA"
+            >
               <SocialName hoverColor={YOUTUBE}>YOUTUBE</SocialName>
               <Youtube size={small ? 28 : 56} />
             </TileSocial>
           </TileSocialBox>
         </Section>
         <Section>
-          <Title>
-            {capitalize(index.testimonyTitle)}
-          </Title>
+          <Title>{capitalize(index.testimonyTitle)}</Title>
           <Section>
-            <RoundImg src="/static/images/index-end.png" alt="mitou et charles" />
+            <RoundImg
+              src="/static/images/index-end.png"
+              alt="mitou et charles"
+            />
           </Section>
           <P>{index.testimony}</P>
         </Section>

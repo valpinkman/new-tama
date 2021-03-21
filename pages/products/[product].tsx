@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import Layout from '../../src/components/layout'
@@ -163,7 +163,7 @@ const Product = () => {
   const router = useRouter()
   const translations = useTranslations()
   const { cocktails, products: productsLang } = translations
-  const [name] = router.asPath.split('/').slice(-1)
+  const [name] = useMemo(() => router.asPath.split('/').slice(-1), [router.asPath])
   const currCocktail = cocktails[name]
   const products = currCocktail ? currCocktail.products.map((p: { name: string }) => p.name) : 'smoothies'
 
