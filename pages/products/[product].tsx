@@ -1,23 +1,28 @@
-import React, { useMemo, useState } from 'react'
-import styled from 'styled-components'
-import { useRouter } from 'next/router'
-import Layout from '../../src/components/layout'
-import Main from '../../src/components/main'
-import Title from '../../src/components/title'
-import { useTranslations } from '../../src/hooks/use-lang'
-import Section from '../../src/components/section'
-import dynamic from 'next/dynamic'
-import { capitalize } from '../../src/utils/string'
-import { DARK_GRAY, PINK, LIGHT_GREEN, LIGHT_ORANGE, LIGHT_PINK } from './../../src/styles/colors'
+import React, { useEffect, useMemo, useState } from "react"
+import styled from "styled-components"
+import { useRouter } from "next/router"
+import Layout from "../../src/components/layout"
+import Main from "../../src/components/main"
+import Title from "../../src/components/title"
+import { useTranslations } from "../../src/hooks/use-lang"
+import Section from "../../src/components/section"
+import dynamic from "next/dynamic"
+import { capitalize } from "../../src/utils/string"
+import {
+  DARK_GRAY,
+  LIGHT_GREEN,
+  LIGHT_ORANGE,
+  LIGHT_PINK,
+} from "./../../src/styles/colors"
 
 const BreadcrumbsLink = dynamic(
-  ()=> import('../../src/components/breadcrumbs'),
-  { ssr: false }
+  () => import("../../src/components/breadcrumbs"),
+  { ssr: false },
 )
 
 const BreadcrumbsAction = dynamic(
-  ()=> import('../../src/components/breadcrumbs-action'),
-  { ssr: false }
+  () => import("../../src/components/breadcrumbs-action"),
+  { ssr: false },
 )
 
 const TaglineWrapper = styled.div`
@@ -46,19 +51,18 @@ const Wrapper = styled.div`
   }
 `
 
-const Container = styled.div<{ type: 'smoothies' | 'greens' | 'signature' }>`
+const Container = styled.div<{ type: "smoothies" | "greens" | "signature" }>`
   display: flex;
   justify-content: center;
   align-items: center;
   align-self: center;
   border-radius: 50%;
-  background-color: ${p =>
-    p.type === 'smoothies' ?
-      LIGHT_ORANGE :
-      p.type  === 'greens' ?
-        LIGHT_GREEN :
-        LIGHT_PINK
-};
+  background-color: ${(p) =>
+    p.type === "smoothies"
+      ? LIGHT_ORANGE
+      : p.type === "greens"
+      ? LIGHT_GREEN
+      : LIGHT_PINK};
   width: 1px;
   height: 1px;
   padding: 210px;
@@ -106,20 +110,19 @@ const Fruits = styled.div`
   }
 `
 
-const Fruit = styled.div<{ type: 'smoothies' | 'greens' | 'signature' }>`
+const Fruit = styled.div<{ type: "smoothies" | "greens" | "signature" }>`
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  background-color: ${p =>
-    p.type === 'smoothies' ?
-      LIGHT_ORANGE :
-      p.type  === 'greens' ?
-        LIGHT_GREEN :
-        LIGHT_PINK
-};
+  background-color: ${(p) =>
+    p.type === "smoothies"
+      ? LIGHT_ORANGE
+      : p.type === "greens"
+      ? LIGHT_GREEN
+      : LIGHT_PINK};
   margin-right: 24px;
   margin-bottom: 24px;
 
@@ -163,14 +166,28 @@ const Product = () => {
   const router = useRouter()
   const translations = useTranslations()
   const { cocktails, products: productsLang } = translations
-  const [name] = useMemo(() => router.asPath.split('/').slice(-1), [router.asPath])
+  const [name] = useMemo(() => router.asPath.split("/").slice(-1), [
+    router.asPath,
+  ])
   const currCocktail = cocktails[name]
-  const products = currCocktail ? currCocktail.products.map((p: { name: string }) => p.name) : 'smoothies'
+  const products = currCocktail.products.map((p: { name: string }) => p.name)
 
-  const [active, setActive] = useState(() =>products[0])
+  const [active, setActive] = useState(() => products[0])
 
-  const items = Object.keys(cocktails).map((key: string) => ({ name: key, path: cocktails[key].path  }))
-  const activeProduct = currCocktail ? currCocktail.products.find((p: any) => p.name === active) : null
+  const items = Object.keys(cocktails).map((key: string) => ({
+    name: key,
+    path: cocktails[key].path,
+  }))
+
+  const activeProduct = currCocktail.products.find(
+    (p: any) => p.name === active,
+  )
+
+  useEffect(() => {
+    if (!activeProduct || active !== activeProduct) {
+      setActive(products[0])
+    }
+  }, [name])
 
   if (!activeProduct) return null
 
@@ -180,31 +197,50 @@ const Product = () => {
         <BreadcrumbsLink current={name} items={items} />
         <Title>{currCocktail.title}</Title>
         <TaglineWrapper>
-          {currCocktail.tagline.map((t: string) => <Span key={t}>{t}</Span>)}
+          {currCocktail.tagline.map((t: string) => (
+            <Span key={t}>{t}</Span>
+          ))}
         </TaglineWrapper>
-        <BreadcrumbsAction current={active} items={products} action={setActive} />
+        <BreadcrumbsAction
+          current={active}
+          items={products}
+          action={setActive}
+        />
         <Section>
           <Wrapper>
             <HideBig>
-              <Title style={{ marginBottom: 24 }}>{capitalize(activeProduct.name)}</Title>
+              <Title style={{ marginBottom: 24 }}>
+                {capitalize(activeProduct.name)}
+              </Title>
             </HideBig>
-            <Container type={name as 'smoothies' | 'greens' | 'signature' }>
+            <Container type={name as "smoothies" | "greens" | "signature"}>
               <Img src={activeProduct.picture} />
             </Container>
             <Meta>
               <HideSmall>
-                <Title style={{ marginBottom: 24 }}>{capitalize(activeProduct.name)}</Title>
+                <Title style={{ marginBottom: 24 }}>
+                  {capitalize(activeProduct.name)}
+                </Title>
               </HideSmall>
               <SubTitle>{productsLang.content}</SubTitle>
-              <FruitsName>{activeProduct.fruits.map((fruit: { name: string; img: string }) => fruit.name).join(' / ')}</FruitsName>
+              <FruitsName>
+                {activeProduct.fruits
+                  .map((fruit: { name: string; img: string }) => fruit.name)
+                  .join(" / ")}
+              </FruitsName>
               <Fruits>
-                {activeProduct.fruits.map((fruit: { name: string; img: string }) => {
-                  return (
-                    <Fruit key={fruit.name} type={name as 'smoothies' | 'greens' | 'signature' }>
-                      <img src={`/static/images/fruits/${fruit.img}.svg`} />
-                    </Fruit>
-                  )
-                })}
+                {activeProduct.fruits.map(
+                  (fruit: { name: string; img: string }) => {
+                    return (
+                      <Fruit
+                        key={fruit.name}
+                        type={name as "smoothies" | "greens" | "signature"}
+                      >
+                        <img src={`/static/images/fruits/${fruit.img}.svg`} />
+                      </Fruit>
+                    )
+                  },
+                )}
               </Fruits>
               {activeProduct.syrup ? (
                 <>
@@ -225,8 +261,8 @@ const Product = () => {
 export const getServerSideProps = async (props: any) => {
   return {
     props: {
-      query: props.query
-    }
+      query: props.query,
+    },
   }
 }
 
