@@ -1,6 +1,7 @@
 import React from 'react'
 import Document, {
   DocumentContext,
+  Html,
   Head,
   Main,
   NextScript,
@@ -39,13 +40,8 @@ class MyDocument extends Document<any> {
 
   render() {
     return (
-      <html prefix="og: http://ogp.me/ns#">
+      <Html prefix="og: http://ogp.me/ns#">
         <Head>
-          <meta
-            key="viewport"
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
           <meta key="charset" charSet="utf-8" />
           <link rel="shortcut icon" type="image/x-icon" href="/static/favicon/favicon.ico" />
           <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/static/favicon/apple-touch-icon-57x57.png" />
@@ -73,7 +69,7 @@ class MyDocument extends Document<any> {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }
