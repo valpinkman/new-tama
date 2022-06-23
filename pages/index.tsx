@@ -40,6 +40,8 @@ const ImgTitle = styled.img`
 
 const LogoContainer = styled.div`
   flex: 1;
+  display: flex;
+  justify-content: center;
   justify-self: center;
   height: 320px;
 

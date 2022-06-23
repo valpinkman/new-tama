@@ -1,14 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
-import { useLang } from '../../hooks/use-lang'
-import { Lang } from '../../../types/lang'
-import routes, { Routes, Route } from '../../utils/routes'
-import { DARK_GRAY, GREEN } from '../../styles/colors'
-import useMatchMedia from '../../hooks/use-match-media'
+import React, { useState, useEffect } from "react"
+import styled from "styled-components"
+import { useRouter } from "next/router"
+import Link from "next/link"
+import { useLang } from "../../hooks/use-lang"
+import { Lang } from "../../../types/lang"
+import routes, { Routes, Route } from "../../utils/routes"
+import { DARK_GRAY, GREEN } from "../../styles/colors"
+import useMatchMedia from "../../hooks/use-match-media"
 
-const omitted = ['article', 'signin', 'fresh', 'signup', 'product', 'news', 'pro']
+const omitted = [
+  "article",
+  "signin",
+  "fresh",
+  "signup",
+  "product",
+  "news",
+  "pro",
+  "shop",
+]
 const withOmitted = (lang: Lang, routes: Routes) =>
   routes[lang].filter((route: Route) => !omitted.includes(route.key))
 
@@ -23,7 +32,7 @@ const A = styled.a<{ active?: boolean }>`
   font-size: 20px;
   cursor: pointer;
   padding: 8px;
-  color: ${p => p.active ? GREEN : DARK_GRAY};
+  color: ${(p) => (p.active ? GREEN : DARK_GRAY)};
   transition: color ease-out 300ms;
 
   &:hover {
@@ -31,18 +40,24 @@ const A = styled.a<{ active?: boolean }>`
   }
 `
 
-function NavDesktop({ nav }: { nav: Array<{ src: string; title: string; key: string }> }) {
+function NavDesktop({
+  nav,
+}: {
+  nav: Array<{ src: string; title: string; key: string }>
+}) {
   const router = useRouter()
 
   return (
     <Wrapper>
-      {nav.map(({ src, title, key }: { src: string; title: string; key: string }) => (
-        <React.Fragment key={key}>
-          <Link href={src}>
-            <A active={router.asPath === src}>{title}</A>
-          </Link>
-        </React.Fragment>
-      ))}
+      {nav.map(
+        ({ src, title, key }: { src: string; title: string; key: string }) => (
+          <React.Fragment key={key}>
+            <Link href={src}>
+              <A active={router.asPath === src}>{title}</A>
+            </Link>
+          </React.Fragment>
+        ),
+      )}
     </Wrapper>
   )
 }
@@ -52,17 +67,17 @@ const WrapperMobile = styled.div`
   flex-direction: column;
 `
 
-function NavMobile({ nav }: { nav: Array<{ src: string; title: string; key: string }> }) {
+function NavMobile({
+  nav,
+}: {
+  nav: Array<{ src: string; title: string; key: string }>
+}) {
   const router = useRouter()
-  return (
-    <WrapperMobile>
-
-    </WrapperMobile>
-  )
+  return <WrapperMobile></WrapperMobile>
 }
 
 function Nav() {
-  const small = useMatchMedia('(max-width: 900px)')
+  const small = useMatchMedia("(max-width: 900px)")
   const lang = useLang()
 
   const [nav, setNav] = useState(() => {
