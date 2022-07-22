@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import dynamic from 'next/dynamic'
-import Layout from '../src/components/layout'
+import React, { useEffect, useState } from "react"
+import styled from "styled-components"
+import dynamic from "next/dynamic"
+import Layout from "../src/components/layout"
 // import Sign from '../src/components/user/sign'
-import { useTranslations } from '../src/hooks/use-lang'
-import { DARK_GRAY, GREEN } from '../src/styles/colors'
-import Main from '../src/components/main'
-import Title from '../src/components/title'
-import Section from '../src/components/section'
-import { RoundImg } from '../src/components/img'
-import Img from '../src/components/img'
-import useMatchMedia from '../src/hooks/use-match-media'
+import { useTranslations } from "../src/hooks/use-lang"
+import { DARK_GRAY, GREEN } from "../src/styles/colors"
+import Main from "../src/components/main"
+import Title from "../src/components/title"
+import Section from "../src/components/section"
+import { RoundImg } from "../src/components/img"
+import Img from "../src/components/img"
+import useMatchMedia from "../src/hooks/use-match-media"
 
-const YoutubeVideo = dynamic(
-  () => import('../src/components/youtube-video'),
-  { ssr: false }
-)
+const YoutubeVideo = dynamic(() => import("../src/components/youtube-video"), {
+  ssr: false,
+})
 
 const Subtitle = styled.h3`
   font-size: 24px;
@@ -64,11 +63,10 @@ const Center = styled.div`
   justify-content: center;
 `
 
-
 const About = (props: any) => {
   const translations = useTranslations()
   const { about } = translations
-  const small = useMatchMedia('(max-width: 900px)')
+  const small = useMatchMedia("(max-width: 900px)")
   const [width, setWidth] = useState(() => {
     try {
       const wSize = window?.innerWidth
@@ -88,9 +86,9 @@ const About = (props: any) => {
       console.log(e)
     }
 
-    window.addEventListener('resize', handler)
+    window.addEventListener("resize", handler)
 
-    return () => window.removeEventListener('resize', handler)
+    return () => window.removeEventListener("resize", handler)
   }, [])
 
   const opts = {
@@ -101,24 +99,32 @@ const About = (props: any) => {
   return (
     <Layout>
       <Main>
-        <Title style={{ justifyContent: 'center' }}>{about.title}</Title>
+        <Title style={{ justifyContent: "center" }}>{about.title}</Title>
         <Section>
           <RoundImg src={about.img} />
         </Section>
         <Section>
-          <Subtitle>
-            {about.subtitle}
-          </Subtitle>
+          <Subtitle>{about.subtitle}</Subtitle>
           <HowToWrapper>
-            {about.steps.map(({ name, title, img }: { name: string; title: string; img: string }) => (
-              <HowToItem key={name}>
-                <Logo src={img} alt={name} />
-                <P>{title}</P>
-              </HowToItem>
-            ))}
+            {about.steps.map(
+              ({
+                name,
+                title,
+                img,
+              }: {
+                name: string
+                title: string
+                img: string
+              }) => (
+                <HowToItem key={name}>
+                  <Logo src={img} alt={name} />
+                  <P>{title}</P>
+                </HowToItem>
+              ),
+            )}
           </HowToWrapper>
         </Section>
-        <Section>
+        {/* <Section>
           <Title style={{ justifyContent: 'center' }}>{about.videos.smoothie.heading}</Title>
           <Center>
             <YoutubeVideo videoId={about.videos.smoothie.video} opts={small ? opts : undefined} />
@@ -129,7 +135,7 @@ const About = (props: any) => {
           <Center>
             <YoutubeVideo videoId={about.videos.cocktail.video} opts={small ? opts : undefined} />
           </Center>
-        </Section>
+        </Section> */}
       </Main>
     </Layout>
   )

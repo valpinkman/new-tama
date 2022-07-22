@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { DARK_GRAY, GREEN } from '../styles/colors'
-import { useTranslations } from '../hooks/use-lang'
+import React from "react"
+import styled from "styled-components"
+import { DARK_GRAY, GREEN } from "../styles/colors"
+import { useTranslations } from "../hooks/use-lang"
 
 const Foot = styled.footer`
   box-sizing: border-box;
@@ -26,7 +26,8 @@ const Foot = styled.footer`
 const Div = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 1.2;
 
   @media (max-width: 900px) {
     margin-top: 16px;
@@ -40,13 +41,14 @@ const Footer = () => {
       <span>{footer.title}</span>
       <Div>
         <span>{footer.contact.name}</span>
-        <span>{footer.contact.address}</span>
+        {/* <span>{footer.contact.address}</span> */}
         <span>{footer.contact.zip}</span>
         <span>{footer.contact.city}</span>
       </Div>
       <Div>
         <span>{footer.contact.title}</span>
         <span>{footer.contact.email}</span>
+        <span>{footer.contact.telephone}</span>
       </Div>
     </Foot>
   )

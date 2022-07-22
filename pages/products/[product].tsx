@@ -14,6 +14,7 @@ import {
   LIGHT_ORANGE,
   LIGHT_PINK,
 } from "./../../src/styles/colors"
+import { futimes } from "fs"
 
 const BreadcrumbsLink = dynamic(
   () => import("../../src/components/breadcrumbs"),
@@ -166,9 +167,10 @@ const Product = () => {
   const router = useRouter()
   const translations = useTranslations()
   const { cocktails, products: productsLang } = translations
-  const [name] = useMemo(() => router.asPath.split("/").slice(-1), [
-    router.asPath,
-  ])
+  const [name] = useMemo(
+    () => router.asPath.split("/").slice(-1),
+    [router.asPath],
+  )
   const currCocktail = cocktails[name]
   const products = currCocktail.products.map((p: { name: string }) => p.name)
 
@@ -194,7 +196,7 @@ const Product = () => {
   return (
     <Layout>
       <Main>
-        <BreadcrumbsLink current={name} items={items} />
+        {/* <BreadcrumbsLink current={name} items={items} /> */}
         <Title>{currCocktail.title}</Title>
         <TaglineWrapper>
           {currCocktail.tagline.map((t: string) => (
@@ -236,20 +238,23 @@ const Product = () => {
                         key={fruit.name}
                         type={name as "smoothies" | "greens" | "signature"}
                       >
-                        <img src={`/static/images/fruits/${fruit.img}.svg`} />
+                        <img
+                          src={`/static/images/fruits/${fruit.img}.svg`}
+                          alt={fruit.name}
+                        />
                       </Fruit>
                     )
                   },
                 )}
               </Fruits>
-              {activeProduct.syrup ? (
+              {/* {activeProduct.syrup ? (
                 <>
                   <Syrup>{`+ ${productsLang.syrup}`}</Syrup>
                   <SubTitle>{`${capitalize(activeProduct.syrup)}`}</SubTitle>
                   <Syrup>{`+ ${productsLang.alcohol}`}</Syrup>
                   <SubTitle>{`${capitalize(activeProduct.alcohol)}`}</SubTitle>
                 </>
-              ) : null}
+              ) : null} */}
             </Meta>
           </Wrapper>
         </Section>

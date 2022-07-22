@@ -211,47 +211,6 @@ export default {
             "/static/images/cocktails/smoothies/melon-pop-fruits.png",
           color: "MELON_POP",
         },
-      ],
-    },
-    greens: {
-      tagline: [
-        "Nuove ricette Detox e Energia con frutta e verdura",
-        "Con vitamine A, B, C, E, ferro e antiossidanti",
-      ],
-      title: "Greens",
-      path: "/prodotti/greens",
-      products: [
-        // {
-        //   name: 'green splash',
-        //   fruits: [
-        //     {
-        //       name: 'mela verde',
-        //       img: 'apple',
-        //     },
-        //     {
-        //       name: 'pera',
-        //       img: 'pear',
-        //     },
-        //     {
-        //       name: 'spinaci',
-        //       img: 'spinach',
-        //     },
-        //     {
-        //       name: 'banana',
-        //       img: 'banana',
-        //     },
-        //     {
-        //       name: 'lime',
-        //       img: 'lime',
-        //     }, {
-        //       name: 'basilico',
-        //       img: 'basil'
-        //     }
-        //   ],
-        //   picture: '/static/images/cocktails/greens/green-splash.png',
-        //   illustration: '/static/images/cocktails/greens/green-splash-fruits.png',
-        //   color: 'GREEN_SPLASH',
-        // },
         {
           name: "boost",
           fruits: [
@@ -282,77 +241,118 @@ export default {
         },
       ],
     },
-    signature: {
-      tagline: [
-        "Velocità, semplicità di preparazione e escluvità",
-        "Ecco la nostra soluzione per preparare i cocktails Tamarindo Signature Collezione inedita 2018",
-      ],
-      title: "Signature",
-      path: "/prodotti/signature",
-      products: [
-        {
-          name: "mungo jerry",
-          fruits: [
-            { name: "mango", img: "mango" },
-            {
-              name: "fragola",
-              img: "strawberry",
-            },
-            {
-              name: "coco",
-              img: "coconut",
-            },
-          ],
-          sirup: "mungo jerry",
-          alcohol: "vodka",
-          picture: "/static/images/cocktails/signature/mungo-jerry.png",
-        },
-        {
-          name: "pura vida",
-          fruits: [
-            {
-              name: "mango",
-              img: "mango",
-            },
-            {
-              name: "ananas",
-              img: "pineapple",
-            },
-            {
-              name: "lime",
-              img: "lime",
-            },
-          ],
-          sirup: "pura vida",
-          alcohol: "rhum",
-          picture: "/static/images/cocktails/signature/pura-vida.png",
-        },
-        {
-          name: "summer pop",
-          fruits: [
-            {
-              name: "anguria",
-              img: "watermelon",
-            },
-            {
-              name: "melone",
-              img: "melon",
-            },
-            {
-              name: "lampone",
-              img: "raspberry",
-            },
-            {
-              name: "lime",
-              img: "lime",
-            },
-          ],
-          sirup: "summer pop",
-          alcohol: "vodka",
-          picture: "/static/images/cocktails/signature/summer-pop.png",
-        },
-      ],
-    },
+    // greens: {
+    //   tagline: [
+    //     "Nuove ricette Detox e Energia con frutta e verdura",
+    //     "Con vitamine A, B, C, E, ferro e antiossidanti",
+    //   ],
+    //   title: "Greens",
+    //   path: "/prodotti/greens",
+    //   products: [
+    //     // {
+    //     //   name: 'green splash',
+    //     //   fruits: [
+    //     //     {
+    //     //       name: 'mela verde',
+    //     //       img: 'apple',
+    //     //     },
+    //     //     {
+    //     //       name: 'pera',
+    //     //       img: 'pear',
+    //     //     },
+    //     //     {
+    //     //       name: 'spinaci',
+    //     //       img: 'spinach',
+    //     //     },
+    //     //     {
+    //     //       name: 'banana',
+    //     //       img: 'banana',
+    //     //     },
+    //     //     {
+    //     //       name: 'lime',
+    //     //       img: 'lime',
+    //     //     }, {
+    //     //       name: 'basilico',
+    //     //       img: 'basil'
+    //     //     }
+    //     //   ],
+    //     //   picture: '/static/images/cocktails/greens/green-splash.png',
+    //     //   illustration: '/static/images/cocktails/greens/green-splash-fruits.png',
+    //     //   color: 'GREEN_SPLASH',
+    //     // },
+    //   ],
+    // },
+    // signature: {
+    //   tagline: [
+    //     "Velocità, semplicità di preparazione e escluvità",
+    //     "Ecco la nostra soluzione per preparare i cocktails Tamarindo Signature Collezione inedita 2018",
+    //   ],
+    //   title: "Signature",
+    //   path: "/prodotti/signature",
+    //   products: [
+    //     {
+    //       name: "mungo jerry",
+    //       fruits: [
+    //         { name: "mango", img: "mango" },
+    //         {
+    //           name: "fragola",
+    //           img: "strawberry",
+    //         },
+    //         {
+    //           name: "coco",
+    //           img: "coconut",
+    //         },
+    //       ],
+    //       sirup: "mungo jerry",
+    //       alcohol: "vodka",
+    //       picture: "/static/images/cocktails/signature/mungo-jerry.png",
+    //     },
+    //     {
+    //       name: "pura vida",
+    //       fruits: [
+    //         {
+    //           name: "mango",
+    //           img: "mango",
+    //         },
+    //         {
+    //           name: "ananas",
+    //           img: "pineapple",
+    //         },
+    //         {
+    //           name: "lime",
+    //           img: "lime",
+    //         },
+    //       ],
+    //       sirup: "pura vida",
+    //       alcohol: "rhum",
+    //       picture: "/static/images/cocktails/signature/pura-vida.png",
+    //     },
+    //     {
+    //       name: "summer pop",
+    //       fruits: [
+    //         {
+    //           name: "anguria",
+    //           img: "watermelon",
+    //         },
+    //         {
+    //           name: "melone",
+    //           img: "melon",
+    //         },
+    //         {
+    //           name: "lampone",
+    //           img: "raspberry",
+    //         },
+    //         {
+    //           name: "lime",
+    //           img: "lime",
+    //         },
+    //       ],
+    //       sirup: "summer pop",
+    //       alcohol: "vodka",
+    //       picture: "/static/images/cocktails/signature/summer-pop.png",
+    //     },
+    //   ],
+    // },
   },
   date: {
     dateFormat: "D MMMM YYYY",
@@ -361,10 +361,11 @@ export default {
     title: "© Smoothies Tamarindo",
     contact: {
       title: "Per conttatarci",
-      name: "ZI la Coupe",
-      email: "contact@smoothiestamarindo.com",
-      address: "57 rue Antoine Becquerel",
-      city: "11100 Narbonne, Francia",
+      name: "Arbres d'en sauri",
+      email: "contact@fruitsconcept.com",
+      address: "",
+      city: "66600 Salses le château, Francia",
+      telephone: "+33 4 30 19 52 19",
     },
   },
   index: {
@@ -492,13 +493,13 @@ export default {
   navigation: {
     about: {
       name: "concetto",
-      title: "il nostro concetto",
+      title: "Il nostro concetto",
       route: "/concetto",
       page: "about",
     },
     products: {
       name: "prodotti",
-      title: "i nostri prodotti",
+      title: "I nostri prodotti",
       route: "/prodotti",
       page: "products",
     },

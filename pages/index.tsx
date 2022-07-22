@@ -278,7 +278,7 @@ const Index = () => {
             </Link>
           </div>
         </Section> */}
-        <Section>
+        {/* <Section>
           <Title>
             <ImgTitle src="/static/images/index-fruit.png" />
             {capitalize(index.follow)}
@@ -317,7 +317,7 @@ const Index = () => {
               <Youtube size={small ? 28 : 56} />
             </TileSocial>
           </TileSocialBox>
-        </Section>
+        </Section> */}
         <Section>
           <Title>{capitalize(index.testimonyTitle)}</Title>
           <Section>
