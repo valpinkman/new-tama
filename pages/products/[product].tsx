@@ -198,11 +198,7 @@ const Product = () => {
             <Span key={t}>{t}</Span>
           ))}
         </TaglineWrapper>
-        <BreadcrumbsAction
-          current={active}
-          items={products}
-          action={() => {}}
-        />
+        <BreadcrumbsAction current={active} items={products} />
         <Section>
           <Wrapper>
             <HideBig>
