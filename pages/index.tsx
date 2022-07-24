@@ -247,7 +247,7 @@ const Index = () => {
             {capitalize(index.discover.title)}
           </Title>
           <TileBox>
-            <Link href={`${navigation.cocktail.route}smoothies`}>
+            <Link href={`${navigation.cocktail.route}ultra-violet`}>
               <a
                 style={{
                   display: "flex",
