@@ -20,7 +20,7 @@ import Title from "../src/components/title"
 import { RoundImg } from "../src/components/img"
 import Section from "../src/components/section"
 import { useTranslations } from "../src/hooks/use-lang"
-import { useProvideAuth } from "../src/hooks/use-firebase"
+// import { useProvideAuth } from "../src/hooks/use-firebase"
 import { capitalize } from "../src/utils/string"
 import Logo from "../src/icons/logo/round"
 import Facebook from "../src/icons/drawn/facebook"
@@ -219,7 +219,7 @@ const P = styled.p`
 
 const Index = () => {
   const translations = useTranslations()
-  const { user } = useProvideAuth()
+  // const { user } = useProvideAuth()
   const { index, footer, navigation } = translations
   const small = useMatchMedia("(max-width: 900px)")
 
