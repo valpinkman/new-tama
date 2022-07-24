@@ -56,10 +56,6 @@ const conf = {
         destination: "/products/:product",
       },
       {
-        source: "/nos-produits",
-        destination: "/products",
-      },
-      {
         source: "/fraiches-news/fraiche/:fresh",
         destination: "/blog/:fresh",
       },
@@ -94,10 +90,6 @@ const conf = {
         destination: "/products/:product",
       },
       {
-        source: "/our-products",
-        destination: "/products",
-      },
-      {
         source: "/fresh-news/fresh/:fresh",
         destination: "/blog/:fresh",
       },
@@ -118,10 +110,6 @@ const conf = {
       {
         source: "/prodotti/:product",
         destination: "/products/:product",
-      },
-      {
-        source: "/prodotti",
-        destination: "/products",
       },
       {
         source: "/notizie-fresche/fresca/:fresh",
@@ -146,6 +134,25 @@ const conf = {
       {
         source: "/iscrizione",
         destination: "/signup",
+      },
+    ]
+  },
+  async redirects() {
+    return [
+      {
+        source: "/nos-produits",
+        destination: "/nos-produits/ultra-violet",
+        permanent: false,
+      },
+      {
+        source: "/our-products",
+        destination: "/our-products/ultra-violet",
+        permanent: false,
+      },
+      {
+        source: "/prodotti",
+        destination: "/prodotti/ultra-violet",
+        permanent: false,
       },
     ]
   },

@@ -16,10 +16,10 @@ import {
 } from "./../../src/styles/colors"
 import { futimes } from "fs"
 
-const BreadcrumbsLink = dynamic(
-  () => import("../../src/components/breadcrumbs"),
-  { ssr: false },
-)
+// const BreadcrumbsLink = dynamic(
+//   () => import("../../src/components/breadcrumbs"),
+//   { ssr: false },
+// )
 
 const BreadcrumbsAction = dynamic(
   () => import("../../src/components/breadcrumbs-action"),
@@ -167,31 +167,26 @@ const Product = () => {
   const router = useRouter()
   const translations = useTranslations()
   const { cocktails, products: productsLang } = translations
-  const [name] = useMemo(
-    () => router.asPath.split("/").slice(-1),
-    [router.asPath],
-  )
-  const currCocktail = cocktails[name]
+  const currCocktail = cocktails["smoothies"]
   const products = currCocktail.products.map((p: { name: string }) => p.name)
 
-  const [active, setActive] = useState(() => products[0])
+  const {
+    query: { product },
+  } = router
 
-  const items = Object.keys(cocktails).map((key: string) => ({
-    name: key,
-    path: cocktails[key].path,
-  }))
+  const active =
+    product && !Array.isArray(product) ? product?.replace("-", " ") : null
+
+  // const items = Object.keys(cocktails).map((key: string) => ({
+  //   name: key,
+  //   path: cocktails[key].path,
+  // }))
 
   const activeProduct = currCocktail.products.find(
     (p: any) => p.name === active,
   )
 
-  useEffect(() => {
-    if (!activeProduct || active !== activeProduct) {
-      setActive(products[0])
-    }
-  }, [name])
-
-  if (!activeProduct) return null
+  if (!activeProduct || !active) return null
 
   return (
     <Layout>
@@ -206,7 +201,7 @@ const Product = () => {
         <BreadcrumbsAction
           current={active}
           items={products}
-          action={setActive}
+          action={() => {}}
         />
         <Section>
           <Wrapper>
@@ -215,7 +210,7 @@ const Product = () => {
                 {capitalize(activeProduct.name)}
               </Title>
             </HideBig>
-            <Container type={name as "smoothies" | "greens" | "signature"}>
+            <Container type={"smoothies"}>
               <Img src={activeProduct.picture} />
             </Container>
             <Meta>
@@ -234,10 +229,7 @@ const Product = () => {
                 {activeProduct.fruits.map(
                   (fruit: { name: string; img: string }) => {
                     return (
-                      <Fruit
-                        key={fruit.name}
-                        type={name as "smoothies" | "greens" | "signature"}
-                      >
+                      <Fruit key={fruit.name} type={"smoothies"}>
                         <img
                           src={`/static/images/fruits/${fruit.img}.svg`}
                           alt={fruit.name}

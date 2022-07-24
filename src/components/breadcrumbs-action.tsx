@@ -1,6 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { DARK_GRAY, ORANGE } from '../styles/colors'
+import Link from "next/link"
+import React from "react"
+import styled from "styled-components"
+import { useTranslations } from "../hooks/use-lang"
+import { DARK_GRAY, ORANGE } from "../styles/colors"
 
 const Container = styled.div`
   display: flex;
@@ -10,7 +12,7 @@ const Container = styled.div`
   @media (max-width: 900px) {
     flex-direction: row;
     flex-wrap: wrap;
-   }
+  }
 `
 
 const Span = styled.span<{ active: boolean }>`
@@ -21,12 +23,14 @@ const Span = styled.span<{ active: boolean }>`
   cursor: pointer;
   border-radius: 16px;
   padding: 4px 16px;
-  color: ${p => p.active ? "#fff" : DARK_GRAY};
-  ${p => p.active ? `
+  color: ${(p) => (p.active ? "#fff" : DARK_GRAY)};
+  ${(p) =>
+    p.active
+      ? `
     background-color: ${ORANGE};
-  ` : ''}
+  `
+      : ""}
   transition: all 250ms ease-out;
-
 
   &:hover {
     background-color: ${ORANGE};
@@ -34,9 +38,12 @@ const Span = styled.span<{ active: boolean }>`
   }
 
   @media (max-width: 900px) {
-    ${p => p.active ? `
+    ${(p) =>
+      p.active
+        ? `
 
-  ` : ''}
+  `
+        : ""}
     margi-bottom: 24px;
   }
 `
@@ -53,20 +60,26 @@ const Spacer = styled.span`
 `
 
 type ActionProps = {
-  current: string;
-  items: Array<string>;
-  action: (type: string) => void;
+  current: string
+  items: Array<string>
 }
 
-export const BreadcrumbsAction = ({ current, items, action }: ActionProps) => {
+export const BreadcrumbsAction = ({ current, items }: ActionProps) => {
+  const translations = useTranslations()
+  const { navigation } = translations
   return (
     <Container>
-      {items.map((name, i, arr) => (
-        <div onClick={() => action(name)} key={name}>
-          <Span active={name === current}>{name}</Span>
-          {i !== arr.length - 1 ? <Spacer>|</Spacer> : null }
-        </div>
-      ))}
+      {items.map((name, i, arr) => {
+        const cleanName = name.split(" ").join("-")
+        return (
+          <Link href={`${navigation.cocktail.route}${cleanName}`} key={name}>
+            <a style={{ textDecoration: "none" }}>
+              <Span active={name === current}>{name}</Span>
+              {i !== arr.length - 1 ? <Spacer>|</Spacer> : null}
+            </a>
+          </Link>
+        )
+      })}
     </Container>
   )
 }

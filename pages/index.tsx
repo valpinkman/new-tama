@@ -40,6 +40,8 @@ const ImgTitle = styled.img`
 
 const LogoContainer = styled.div`
   flex: 1;
+  display: flex;
+  justify-content: center;
   justify-self: center;
   height: 320px;
 
@@ -189,18 +191,18 @@ const FloatingLink = styled.p`
   }
 `
 
-const FloatingAStyle = styled.a`
-  display: block;
-  font-size: 48px;
-  font-weight: 600;
-  color: white;
-  cursor: pointer;
-  width: 100%;
+// const FloatingAStyle = styled.a`
+//   display: block;
+//   font-size: 48px;
+//   font-weight: 600;
+//   color: white;
+//   cursor: pointer;
+//   width: 100%;
 
-  @media (max-width: 900px) {
-    font-size: 24px;
-  }
-`
+//   @media (max-width: 900px) {
+//     font-size: 24px;
+//   }
+// `
 
 const P = styled.p`
   font-size: 24px;
@@ -246,11 +248,32 @@ const Index = () => {
           </Title>
           <TileBox>
             <Link href={`${navigation.cocktail.route}smoothies`}>
-              <Tile baseColor={ORANGE} textColor="white">
+              <a
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  flex: 1,
+                  justifyContent: "space-evenly",
+                }}
+              >
+                <RoundImg
+                  style={{ maxHeight: 200, width: "auto" }}
+                  src="/static/images/index-smoothies3.jpeg"
+                />
+                <RoundImg
+                  style={{ maxHeight: 200, width: "auto" }}
+                  src="/static/images/index-smoothies.jpg"
+                />
+                <RoundImg
+                  style={{ maxHeight: 200, width: "auto" }}
+                  src="/static/images/index-smoothies2.jpeg"
+                />
+              </a>
+              {/* <Tile baseColor={ORANGE} textColor="white">
                 {capitalize(index.discover.first.title)}
-              </Tile>
+              </Tile> */}
             </Link>
-            <Link href={`${navigation.cocktail.route}greens`}>
+            {/* <Link href={`${navigation.cocktail.route}greens`}>
               <Tile baseColor={GREEN} textColor="white">
                 {capitalize(index.discover.third.title)}
               </Tile>
@@ -259,7 +282,7 @@ const Index = () => {
               <Tile baseColor={GOLD} textColor="white">
                 {capitalize(index.discover.second.title)}
               </Tile>
-            </Link>
+            </Link> */}
           </TileBox>
         </Section>
         {/* <Section>
@@ -267,18 +290,16 @@ const Index = () => {
             <ImgTitle src="/static/images/index-blender.png" />
             {capitalize(index.blog.title)}
           </Title>
-          <div style={{ position: 'relative' }}>
+          <div style={{ position: "relative" }}>
             <Link href={navigation.blog.route}>
               <FloatingAStyle>
                 <RoundImg src={index.blog.picture} />
-                <FloatingLink>
-                  {capitalize(index.blog.subtitle)}
-                </FloatingLink>
+                <FloatingLink>{capitalize(index.blog.subtitle)}</FloatingLink>
               </FloatingAStyle>
             </Link>
           </div>
         </Section> */}
-        {/* <Section>
+        <Section>
           <Title>
             <ImgTitle src="/static/images/index-fruit.png" />
             {capitalize(index.follow)}
@@ -317,7 +338,7 @@ const Index = () => {
               <Youtube size={small ? 28 : 56} />
             </TileSocial>
           </TileSocialBox>
-        </Section> */}
+        </Section>
         <Section>
           <Title>{capitalize(index.testimonyTitle)}</Title>
           <Section>

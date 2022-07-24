@@ -96,7 +96,8 @@ function Nav() {
     }
   }, [lang, setNav])
 
-  return small ? <NavMobile nav={nav} /> : <NavDesktop nav={nav} />
+  // return small ? <NavMobile nav={nav} /> : <NavDesktop nav={nav} />
+  return <NavDesktop nav={nav} />
 }
 
 export default Nav
