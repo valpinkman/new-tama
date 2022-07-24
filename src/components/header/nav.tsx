@@ -52,7 +52,7 @@ function NavDesktop({
       {nav.map(
         ({ src, title, key }: { src: string; title: string; key: string }) => (
           <React.Fragment key={key}>
-            <Link href={src}>
+            <Link href={key === "products" ? `${src}/ultra-violet` : src}>
               <A active={router.asPath === src}>{title}</A>
             </Link>
           </React.Fragment>
