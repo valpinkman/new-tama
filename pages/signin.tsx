@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 
 const Login = (props: any) => {
   useEffect(() => {
-    console.log(props)
-  })
+    console.log(props);
+  });
 
-  return (
-    <h1>Sign in</h1>
-  )
-}
+  return <h1>Sign in</h1>;
+};
 
 Login.getInitialProps = async () => {
   return {
-    page: 'sign in',
-  }
-}
+    page: "sign in",
+  };
+};
 
-export default Login
+export default Login;

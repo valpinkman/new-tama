@@ -1,8 +1,8 @@
-import Link from "next/link"
-import React from "react"
-import styled from "styled-components"
-import { useTranslations } from "../hooks/use-lang"
-import { DARK_GRAY, ORANGE } from "../styles/colors"
+import Link from "next/link";
+import React from "react";
+import styled from "styled-components";
+import { useTranslations } from "../hooks/use-lang";
+import { DARK_GRAY, ORANGE } from "../styles/colors";
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const Container = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
   }
-`
+`;
 
 const Span = styled.span<{ active: boolean }>`
   font-size: 16px;
@@ -46,7 +46,7 @@ const Span = styled.span<{ active: boolean }>`
         : ""}
     margi-bottom: 24px;
   }
-`
+`;
 
 const Spacer = styled.span`
   font-size: 16px;
@@ -57,20 +57,20 @@ const Spacer = styled.span`
   @media (max-width: 900px) {
     display: none;
   }
-`
+`;
 
 type ActionProps = {
-  current: string
-  items: Array<string>
-}
+  current: string;
+  items: Array<string>;
+};
 
 export const BreadcrumbsAction = ({ current, items }: ActionProps) => {
-  const translations = useTranslations()
-  const { navigation } = translations
+  const translations = useTranslations();
+  const { navigation } = translations;
   return (
     <Container>
       {items.map((name, i, arr) => {
-        const cleanName = name.split(" ").join("-")
+        const cleanName = name.split(" ").join("-");
         return (
           <Link href={`${navigation.cocktail.route}${cleanName}`} key={name}>
             <a style={{ textDecoration: "none" }}>
@@ -78,10 +78,10 @@ export const BreadcrumbsAction = ({ current, items }: ActionProps) => {
               {i !== arr.length - 1 ? <Spacer>|</Spacer> : null}
             </a>
           </Link>
-        )
+        );
       })}
     </Container>
-  )
-}
+  );
+};
 
-export default BreadcrumbsAction
+export default BreadcrumbsAction;

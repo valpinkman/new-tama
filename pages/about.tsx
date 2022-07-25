@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react"
-import styled from "styled-components"
-import dynamic from "next/dynamic"
-import Layout from "../src/components/layout"
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import dynamic from "next/dynamic";
+import Layout from "../src/components/layout";
 // import Sign from '../src/components/user/sign'
-import { useTranslations } from "../src/hooks/use-lang"
-import { DARK_GRAY, GREEN } from "../src/styles/colors"
-import Main from "../src/components/main"
-import Title from "../src/components/title"
-import Section from "../src/components/section"
-import { RoundImg } from "../src/components/img"
-import Img from "../src/components/img"
-import useMatchMedia from "../src/hooks/use-match-media"
+import { useTranslations } from "../src/hooks/use-lang";
+import { DARK_GRAY, GREEN } from "../src/styles/colors";
+import Main from "../src/components/main";
+import Title from "../src/components/title";
+import Section from "../src/components/section";
+import { RoundImg } from "../src/components/img";
+import Img from "../src/components/img";
+import useMatchMedia from "../src/hooks/use-match-media";
 
 const YoutubeVideo = dynamic(() => import("../src/components/youtube-video"), {
   ssr: false,
-})
+});
 
 const Subtitle = styled.h3`
   font-size: 24px;
@@ -26,25 +26,25 @@ const Subtitle = styled.h3`
     text-align: justify;
     font-size: 20px;
   }
-`
+`;
 
 const HowToWrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 600px;
   margin: 0 auto;
-`
+`;
 
 const HowToItem = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-`
+`;
 
 const Logo = styled(Img)`
   max-width: 72px;
   padding: 16px 16px 16px 0;
-`
+`;
 
 const P = styled.p`
   color: ${GREEN};
@@ -56,45 +56,45 @@ const P = styled.p`
     font-size: 16px;
     font-weight: 600;
   }
-`
+`;
 
 const Center = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 
 const About = (props: any) => {
-  const translations = useTranslations()
-  const { about } = translations
-  const small = useMatchMedia("(max-width: 900px)")
+  const translations = useTranslations();
+  const { about } = translations;
+  const small = useMatchMedia("(max-width: 900px)");
   const [width, setWidth] = useState(() => {
     try {
-      const wSize = window?.innerWidth
-      return wSize || 0
+      const wSize = window?.innerWidth;
+      return wSize || 0;
     } catch (error) {
-      return 0
+      return 0;
     }
-  })
+  });
 
   useEffect(() => {
     if (width === 0) {
-      const wSize = window.innerWidth
-      setWidth(wSize)
+      const wSize = window.innerWidth;
+      setWidth(wSize);
     }
 
     const handler = (e: any) => {
-      console.log(e)
-    }
+      console.log(e);
+    };
 
-    window.addEventListener("resize", handler)
+    window.addEventListener("resize", handler);
 
-    return () => window.removeEventListener("resize", handler)
-  }, [])
+    return () => window.removeEventListener("resize", handler);
+  }, []);
 
   const opts = {
     width: `${width - 24}`,
     height: `${((width - 24) * 9) / 16}`,
-  }
+  };
 
   return (
     <Layout>
@@ -112,9 +112,9 @@ const About = (props: any) => {
                 title,
                 img,
               }: {
-                name: string
-                title: string
-                img: string
+                name: string;
+                title: string;
+                img: string;
               }) => (
                 <HowToItem key={name}>
                   <Logo src={img} alt={name} />
@@ -138,7 +138,7 @@ const About = (props: any) => {
         </Section> */}
       </Main>
     </Layout>
-  )
-}
+  );
+};
 
-export default About
+export default About;

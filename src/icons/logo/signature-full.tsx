@@ -1,39 +1,39 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 type Props = {
   color: string;
   hoverColor: string | null;
-}
+};
 
 type TextProps = {
   alternative?: boolean;
   color: string;
-}
+};
 
 const Text = styled.text<TextProps>`
-  font-size: ${p => (p.alternative ? 54 : 45)}px;
+  font-size: ${(p) => (p.alternative ? 54 : 45)}px;
   font-family: Montserrat, sans-serif;
   font-weight: 700;
-  fill: ${p => p.color};
-`
+  fill: ${(p) => p.color};
+`;
 
 const Svg = styled.svg<Props>`
   path {
-    fill: ${p => p.color};
+    fill: ${(p) => p.color};
     transition: fill 250ms ease-out;
   }
 
   &:hover path {
-    fill: ${p => p.hoverColor || p.color};
+    fill: ${(p) => p.hoverColor || p.color};
   }
 
   &:hover ${Text} {
-    fill: ${p => p.hoverColor || p.color};
+    fill: ${(p) => p.hoverColor || p.color};
   }
-`
+`;
 
-const SignatureFull = ({ color = 'black', hoverColor = null }: Props) => (
+const SignatureFull = ({ color = "black", hoverColor = null }: Props) => (
   <Svg viewBox="0 0 679.28 563.08" color={color} hoverColor={hoverColor}>
     <Text color={color} transform="rotate(-60.28 248.644 -38.349)">
       T
@@ -134,6 +134,6 @@ const SignatureFull = ({ color = 'black', hoverColor = null }: Props) => (
       transform="translate(-179.89 -97.34)"
     />
   </Svg>
-)
+);
 
-export default SignatureFull
+export default SignatureFull;

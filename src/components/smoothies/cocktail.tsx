@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Cocktail = () => {
-  return <p>Cocktail</p>
-}
+  return <p>Cocktail</p>;
+};
 
-export default Cocktail
+export default Cocktail;

@@ -1,6 +1,6 @@
-import React from "react"
-import { Normalize } from "styled-normalize"
-import { createGlobalStyle } from "styled-components"
+import React from "react";
+import { Normalize } from "styled-normalize";
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -17,15 +17,15 @@ const GlobalStyle = createGlobalStyle`
   .slider-wrapper {
     border-radius: 16px;
   }
-`
+`;
 
 function DefaultStyle() {
   return (
-    <>
+    <React.Fragment>
       <Normalize />
       <GlobalStyle />
-    </>
-  )
+    </React.Fragment>
+  );
 }
 
-export default DefaultStyle
+export default DefaultStyle;

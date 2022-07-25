@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Green = () => {
-  return <p>Green</p>
-}
+  return <p>Green</p>;
+};
 
-export default Green
+export default Green;

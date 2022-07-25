@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Main = styled.main`
   width: 100%;
@@ -12,6 +12,6 @@ const Main = styled.main`
   @media (max-width: 900px) {
     margin: 16px auto;
   }
-`
+`;
 
-export default Main
+export default Main;

@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 
 const Pro = (props: any) => {
   useEffect(() => {
-    console.log(props)
-  })
+    console.log(props);
+  });
 
-  return (
-    <h1>Pro</h1>
-  )
-}
+  return <h1>Pro</h1>;
+};
 
 Pro.getInitialProps = async () => {
   return {
-    page: 'pro',
-  }
-}
+    page: "pro",
+  };
+};
 
-export default Pro
+export default Pro;

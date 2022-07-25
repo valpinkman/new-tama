@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import Link from 'next/link'
-import { DARK_GRAY, GREEN, ORANGE } from '../styles/colors'
-import { capitalize } from 'lodash'
+import React from "react";
+import styled from "styled-components";
+import Link from "next/link";
+import { DARK_GRAY, GREEN, ORANGE } from "../styles/colors";
+import { capitalize } from "lodash";
 
 interface Props {
   current: string;
@@ -16,7 +16,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-`
+`;
 
 const A = styled.a<{ active: boolean }>`
   font-size: 16px;
@@ -25,21 +25,21 @@ const A = styled.a<{ active: boolean }>`
   padding: 12px;
   color: white;
   cursor: pointer;
-  background-color: ${p => p.active ? GREEN : DARK_GRAY};
+  background-color: ${(p) => (p.active ? GREEN : DARK_GRAY)};
   transition: all 250ms ease-out;
   border-radius: 4px;
 
   &:hover {
     background-color: ${GREEN};
   }
-`
+`;
 
 const Spacer = styled.span`
   font-size: 16px;
   font-weight: 600;
   color: ${DARK_GRAY};
   padding: 0 12px;
-`
+`;
 
 const BreadcrumbsLink = ({ current, items }: Props) => {
   return (
@@ -49,11 +49,11 @@ const BreadcrumbsLink = ({ current, items }: Props) => {
           <Link href={path}>
             <A active={name === current}>{capitalize(name)}</A>
           </Link>
-          {i !== arr.length - 1 ? <Spacer /> : null }
+          {i !== arr.length - 1 ? <Spacer /> : null}
         </React.Fragment>
       ))}
     </Container>
-  )
-}
+  );
+};
 
-export default BreadcrumbsLink
+export default BreadcrumbsLink;

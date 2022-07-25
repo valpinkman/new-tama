@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import { DARK_GRAY, GREEN } from "../styles/colors"
-import { useTranslations } from "../hooks/use-lang"
+import React from "react";
+import styled from "styled-components";
+import { DARK_GRAY, GREEN } from "../styles/colors";
+import { useTranslations } from "../hooks/use-lang";
 
 const Foot = styled.footer`
   box-sizing: border-box;
@@ -21,7 +21,7 @@ const Foot = styled.footer`
     height: auto;
     padding: 16px;
   }
-`
+`;
 
 const Div = styled.div`
   display: flex;
@@ -32,10 +32,10 @@ const Div = styled.div`
   @media (max-width: 900px) {
     margin-top: 16px;
   }
-`
+`;
 
 const Footer = () => {
-  const { footer } = useTranslations()
+  const { footer } = useTranslations();
   return (
     <Foot>
       <span>{footer.title}</span>
@@ -51,7 +51,7 @@ const Footer = () => {
         <span>{footer.contact.telephone}</span>
       </Div>
     </Foot>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
