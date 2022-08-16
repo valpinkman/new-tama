@@ -5,13 +5,13 @@ import styled from "styled-components";
 import {
   ORANGE,
   DARK_GRAY,
-  GOLD,
-  GREEN,
-  PINK,
+  // GOLD,
+  // GREEN,
+  // PINK,
   FACEBOOK,
   TWITTER,
   INSTAGRAM,
-  YOUTUBE,
+  // YOUTUBE,
 } from "../src/styles/colors";
 import Layout from "../src/components/layout";
 // import Sign from '../src/components/user/sign'
@@ -24,9 +24,10 @@ import { useTranslations } from "../src/hooks/use-lang";
 import { capitalize } from "../src/utils/string";
 import Logo from "../src/icons/logo/round";
 import Facebook from "../src/icons/drawn/facebook";
-import Twitter from "../src/icons/drawn/twitter";
+// import Twitter from "../src/icons/drawn/twitter";
 import Instagram from "../src/icons/drawn/instagram";
-import Youtube from "../src/icons/drawn/youtube";
+// import Youtube from "../src/icons/drawn/youtube";
+import TikTok from "../src/icons/drawn/Tiktok";
 import useMatchMedia from "../src/hooks/use-match-media";
 
 const Carousel = dynamic(() => import("../src/components/carousel"), {
@@ -308,7 +309,7 @@ const Index = () => {
             <TileSocial
               hoverColor={FACEBOOK}
               target="_blank"
-              href="https://www.facebook.com/smoothiestamarindo"
+              href="https://www.facebook.com/Tamarindo-Smoothies-103969802355504  "
             >
               <SocialName hoverColor={FACEBOOK}>FACEBOOK</SocialName>
               <Facebook size={small ? 28 : 56} />
@@ -316,26 +317,18 @@ const Index = () => {
             <TileSocial
               hoverColor={INSTAGRAM}
               target="_blank"
-              href="https://www.instagram.com/smoothiestamarindo"
+              href="https://www.instagram.com/tamarindosmoothies"
             >
               <SocialName hoverColor={INSTAGRAM}>INSTAGRAM</SocialName>
               <Instagram size={small ? 28 : 56} />
             </TileSocial>
             <TileSocial
-              hoverColor={TWITTER}
+              hoverColor={"black"}
               target="_blank"
-              href="https://twitter.com/TamaSmoothies"
+              href="https://www.tiktok.com/@tamarindosmoothies"
             >
-              <SocialName hoverColor={TWITTER}>TWITTER</SocialName>
-              <Twitter size={small ? 28 : 56} />
-            </TileSocial>
-            <TileSocial
-              hoverColor={YOUTUBE}
-              target="_blank"
-              href="https://www.youtube.com/channel/UCM3kOD5OFLBlFhhfee3WPiA"
-            >
-              <SocialName hoverColor={YOUTUBE}>YOUTUBE</SocialName>
-              <Youtube size={small ? 28 : 56} />
+              <SocialName hoverColor={"#000"}>TWITTER</SocialName>
+              <TikTok size={small ? 28 : 56} />
             </TileSocial>
           </TileSocialBox>
         </Section>
