@@ -1,42 +1,43 @@
-import React from "react"
-import Link from "next/link"
-import dynamic from "next/dynamic"
-import styled from "styled-components"
+import React from "react";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import styled from "styled-components";
 import {
   ORANGE,
   DARK_GRAY,
-  GOLD,
-  GREEN,
-  PINK,
+  // GOLD,
+  // GREEN,
+  // PINK,
   FACEBOOK,
   TWITTER,
   INSTAGRAM,
-  YOUTUBE,
-} from "../src/styles/colors"
-import Layout from "../src/components/layout"
+  // YOUTUBE,
+} from "../src/styles/colors";
+import Layout from "../src/components/layout";
 // import Sign from '../src/components/user/sign'
-import Main from "../src/components/main"
-import Title from "../src/components/title"
-import { RoundImg } from "../src/components/img"
-import Section from "../src/components/section"
-import { useTranslations } from "../src/hooks/use-lang"
-import { useProvideAuth } from "../src/hooks/use-firebase"
-import { capitalize } from "../src/utils/string"
-import Logo from "../src/icons/logo/round"
-import Facebook from "../src/icons/drawn/facebook"
-import Twitter from "../src/icons/drawn/twitter"
-import Instagram from "../src/icons/drawn/instagram"
-import Youtube from "../src/icons/drawn/youtube"
-import useMatchMedia from "../src/hooks/use-match-media"
+import Main from "../src/components/main";
+import Title from "../src/components/title";
+import { RoundImg } from "../src/components/img";
+import Section from "../src/components/section";
+import { useTranslations } from "../src/hooks/use-lang";
+// import { useProvideAuth } from "../src/hooks/use-firebase"
+import { capitalize } from "../src/utils/string";
+import Logo from "../src/icons/logo/round";
+import Facebook from "../src/icons/drawn/facebook";
+// import Twitter from "../src/icons/drawn/twitter";
+import Instagram from "../src/icons/drawn/instagram";
+// import Youtube from "../src/icons/drawn/youtube";
+import TikTok from "../src/icons/drawn/Tiktok";
+import useMatchMedia from "../src/hooks/use-match-media";
 
 const Carousel = dynamic(() => import("../src/components/carousel"), {
   ssr: false,
-})
+});
 
 const ImgTitle = styled.img`
   max-width: 48px;
   padding-right: 16px;
-`
+`;
 
 const LogoContainer = styled.div`
   flex: 1;
@@ -56,7 +57,7 @@ const LogoContainer = styled.div`
       max-height: 200px;
     }
   }
-`
+`;
 
 const TileBox = styled.div`
   flex: 1;
@@ -64,7 +65,7 @@ const TileBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-`
+`;
 
 const Tile = styled.div<{ baseColor: string; textColor?: string }>`
   width: 320px;
@@ -101,7 +102,7 @@ const Tile = styled.div<{ baseColor: string; textColor?: string }>`
       margin-bottom: 0;
     }
   }
-`
+`;
 
 const TileSocialBox = styled.div`
   display: flex;
@@ -112,7 +113,7 @@ const TileSocialBox = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
   }
-`
+`;
 
 const SocialName = styled.span<{ hoverColor: string }>`
   display: none;
@@ -125,7 +126,7 @@ const SocialName = styled.span<{ hoverColor: string }>`
     font-size: 24px;
     font-weight: 500;
   }
-`
+`;
 
 const TileSocial = styled.a<{ hoverColor: string }>`
   cursor: pointer;
@@ -171,7 +172,7 @@ const TileSocial = styled.a<{ hoverColor: string }>`
       margin-bottom: 0;
     }
   }
-`
+`;
 
 const FloatingLink = styled.p`
   position: absolute;
@@ -189,7 +190,7 @@ const FloatingLink = styled.p`
   @media (max-width: 900px) {
     padding: 0 24px;
   }
-`
+`;
 
 // const FloatingAStyle = styled.a`
 //   display: block;
@@ -215,13 +216,13 @@ const P = styled.p`
   @media (max-width: 900px) {
     font-size: 16px;
   }
-`
+`;
 
 const Index = () => {
-  const translations = useTranslations()
-  const { user } = useProvideAuth()
-  const { index, footer, navigation } = translations
-  const small = useMatchMedia("(max-width: 900px)")
+  const translations = useTranslations();
+  // const { user } = useProvideAuth()
+  const { index, footer, navigation } = translations;
+  const small = useMatchMedia("(max-width: 900px)");
 
   return (
     <Layout>
@@ -247,7 +248,7 @@ const Index = () => {
             {capitalize(index.discover.title)}
           </Title>
           <TileBox>
-            <Link href={`${navigation.cocktail.route}smoothies`}>
+            <Link href={`${navigation.cocktail.route}ultra-violet`}>
               <a
                 style={{
                   display: "flex",
@@ -308,7 +309,7 @@ const Index = () => {
             <TileSocial
               hoverColor={FACEBOOK}
               target="_blank"
-              href="https://www.facebook.com/smoothiestamarindo"
+              href="https://www.facebook.com/Tamarindo-Smoothies-103969802355504  "
             >
               <SocialName hoverColor={FACEBOOK}>FACEBOOK</SocialName>
               <Facebook size={small ? 28 : 56} />
@@ -316,26 +317,18 @@ const Index = () => {
             <TileSocial
               hoverColor={INSTAGRAM}
               target="_blank"
-              href="https://www.instagram.com/smoothiestamarindo"
+              href="https://www.instagram.com/tamarindosmoothies"
             >
               <SocialName hoverColor={INSTAGRAM}>INSTAGRAM</SocialName>
               <Instagram size={small ? 28 : 56} />
             </TileSocial>
             <TileSocial
-              hoverColor={TWITTER}
+              hoverColor={"black"}
               target="_blank"
-              href="https://twitter.com/TamaSmoothies"
+              href="https://www.tiktok.com/@tamarindosmoothies"
             >
-              <SocialName hoverColor={TWITTER}>TWITTER</SocialName>
-              <Twitter size={small ? 28 : 56} />
-            </TileSocial>
-            <TileSocial
-              hoverColor={YOUTUBE}
-              target="_blank"
-              href="https://www.youtube.com/channel/UCM3kOD5OFLBlFhhfee3WPiA"
-            >
-              <SocialName hoverColor={YOUTUBE}>YOUTUBE</SocialName>
-              <Youtube size={small ? 28 : 56} />
+              <SocialName hoverColor={"#000"}>TWITTER</SocialName>
+              <TikTok size={small ? 28 : 56} />
             </TileSocial>
           </TileSocialBox>
         </Section>
@@ -351,7 +344,7 @@ const Index = () => {
         </Section>
       </Main>
     </Layout>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;

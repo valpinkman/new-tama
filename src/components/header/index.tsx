@@ -1,12 +1,12 @@
-import React, { useState, useCallback } from 'react'
-import { useSpring } from 'react-spring'
-import styled from 'styled-components'
-import Link from 'next/link'
-import { ORANGE, GREEN } from '../../styles/colors'
-import Logo from '../../icons/logo'
-import Nav from './nav'
-import LanguageSwitcher from './lang-switcher'
-import useMatchMedia from '../../hooks/use-match-media'
+import React, { useState, useCallback } from "react";
+import { useSpring } from "react-spring";
+import styled from "styled-components";
+import Link from "next/link";
+import { ORANGE, GREEN } from "../../styles/colors";
+import Logo from "../../icons/logo";
+import Nav from "./nav";
+import LanguageSwitcher from "./lang-switcher";
+import useMatchMedia from "../../hooks/use-match-media";
 
 const Container = styled.header`
   position: sticky;
@@ -21,11 +21,11 @@ const Container = styled.header`
   @media (max-width: 900px) {
     justify-content: center;
   }
-`
+`;
 
 const NavWrapper = styled.div`
   margin-left: auto;
-`
+`;
 
 const LogoContainer = styled.div`
   width: 96px;
@@ -34,7 +34,7 @@ const LogoContainer = styled.div`
   @media (max-width: 900px) {
     width: 64px;
   }
-`
+`;
 
 function HeaderDesktop() {
   return (
@@ -49,14 +49,12 @@ function HeaderDesktop() {
       </NavWrapper>
       <LanguageSwitcher />
     </Container>
-  )
+  );
 }
 
 const SideBar = () => {
-  return (
-    <Nav />
-  )
-}
+  return <Nav />;
+};
 
 function HeaderMobile() {
   // const [open, setOpen] = useState(false)
@@ -73,12 +71,12 @@ function HeaderMobile() {
       </Container>
       <SideBar />
     </>
-  )
+  );
 }
 
 function Header() {
-  const small = useMatchMedia('(max-width: 900px)')
-  return small === null ? null : small ? <HeaderMobile /> : <HeaderDesktop />
+  const small = useMatchMedia("(max-width: 900px)");
+  return small === null ? null : small ? <HeaderMobile /> : <HeaderDesktop />;
 }
 
-export default Header
+export default Header;

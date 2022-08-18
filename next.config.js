@@ -33,7 +33,7 @@ const withAssetRelocator = (nextConfig = {}) => {
 }
 
 const conf = {
-  target: "serverless",
+  // target: "serverless",
   env: {
     FB_AUTH_DOMAIN: process.env.FB_AUTH_DOMAIN,
     DB_URL: process.env.DB_URL,

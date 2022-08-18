@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Section = styled.section`
   margin-bottom: 32px;
@@ -7,6 +7,6 @@ const Section = styled.section`
   @media (max-width: 900px) {
     margin-bottom: 16px;
   }
-`
+`;
 
-export default Section
+export default Section;

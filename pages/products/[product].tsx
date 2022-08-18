@@ -1,20 +1,20 @@
-import React, { useEffect, useMemo, useState } from "react"
-import styled from "styled-components"
-import { useRouter } from "next/router"
-import Layout from "../../src/components/layout"
-import Main from "../../src/components/main"
-import Title from "../../src/components/title"
-import { useTranslations } from "../../src/hooks/use-lang"
-import Section from "../../src/components/section"
-import dynamic from "next/dynamic"
-import { capitalize } from "../../src/utils/string"
+import React, { useEffect, useMemo, useState } from "react";
+import styled from "styled-components";
+import { useRouter } from "next/router";
+import Layout from "../../src/components/layout";
+import Main from "../../src/components/main";
+import Title from "../../src/components/title";
+import { useTranslations } from "../../src/hooks/use-lang";
+import Section from "../../src/components/section";
+import dynamic from "next/dynamic";
+import { capitalize } from "../../src/utils/string";
 import {
   DARK_GRAY,
   LIGHT_GREEN,
   LIGHT_ORANGE,
   LIGHT_PINK,
-} from "./../../src/styles/colors"
-import { futimes } from "fs"
+} from "./../../src/styles/colors";
+import { futimes } from "fs";
 
 // const BreadcrumbsLink = dynamic(
 //   () => import("../../src/components/breadcrumbs"),
@@ -24,13 +24,13 @@ import { futimes } from "fs"
 const BreadcrumbsAction = dynamic(
   () => import("../../src/components/breadcrumbs-action"),
   { ssr: false },
-)
+);
 
 const TaglineWrapper = styled.div`
   padding-bottom: 32px;
   display: flex;
   flex-direction: column;
-`
+`;
 
 const Span = styled.span`
   font-size: 20px;
@@ -41,7 +41,7 @@ const Span = styled.span`
   &:last-child {
     margin-bottom: 0;
   }
-`
+`;
 
 const Wrapper = styled.div`
   display: flex;
@@ -50,7 +50,7 @@ const Wrapper = styled.div`
   @media (max-width: 900px) {
     flex-direction: column;
   }
-`
+`;
 
 const Container = styled.div<{ type: "smoothies" | "greens" | "signature" }>`
   display: flex;
@@ -72,7 +72,7 @@ const Container = styled.div<{ type: "smoothies" | "greens" | "signature" }>`
     padding: 146px;
     margin: 16px;
   }
-`
+`;
 
 const Img = styled.img`
   width: auto;
@@ -81,14 +81,14 @@ const Img = styled.img`
   @media (max-width: 900px) {
     max-height: 200px;
   }
-`
+`;
 
 const SubTitle = styled.h3`
   font-size: 24px;
   font-weight: 600;
   margin-top: 0;
   color: ${DARK_GRAY};
-`
+`;
 
 const Meta = styled.div`
   display: flex;
@@ -99,7 +99,7 @@ const Meta = styled.div`
   @media (max-width: 900px) {
     margin-left: 0;
   }
-`
+`;
 
 const Fruits = styled.div`
   display: flex;
@@ -109,7 +109,7 @@ const Fruits = styled.div`
   @media (max-width: 900px) {
     justify-content: space-evenly;
   }
-`
+`;
 
 const Fruit = styled.div<{ type: "smoothies" | "greens" | "signature" }>`
   display: flex;
@@ -130,14 +130,14 @@ const Fruit = styled.div<{ type: "smoothies" | "greens" | "signature" }>`
   img {
     width: 60px;
   }
-`
+`;
 
 const FruitsName = styled.span`
   font-size: 16px;
   font-weight: 600;
   color: ${DARK_GRAY};
   margin-bottom: 32px;
-`
+`;
 
 const Syrup = styled.span`
   font-size: 16px;
@@ -149,33 +149,33 @@ const Syrup = styled.span`
   text-transform: capitalize;
   align-self: start;
   margin-bottom: 8px;
-`
+`;
 
 const HideSmall = styled.div`
   @media (max-width: 900px) {
     display: none;
   }
-`
+`;
 
 const HideBig = styled.div`
   @media (min-width: 900px) {
     display: none;
   }
-`
+`;
 
 const Product = () => {
-  const router = useRouter()
-  const translations = useTranslations()
-  const { cocktails, products: productsLang } = translations
-  const currCocktail = cocktails["smoothies"]
-  const products = currCocktail.products.map((p: { name: string }) => p.name)
+  const router = useRouter();
+  const translations = useTranslations();
+  const { cocktails, products: productsLang } = translations;
+  const currCocktail = cocktails["smoothies"];
+  const products = currCocktail.products.map((p: { name: string }) => p.name);
 
   const {
     query: { product },
-  } = router
+  } = router;
 
   const active =
-    product && !Array.isArray(product) ? product?.replace("-", " ") : null
+    product && !Array.isArray(product) ? product?.replace("-", " ") : null;
 
   // const items = Object.keys(cocktails).map((key: string) => ({
   //   name: key,
@@ -184,9 +184,9 @@ const Product = () => {
 
   const activeProduct = currCocktail.products.find(
     (p: any) => p.name === active,
-  )
+  );
 
-  if (!activeProduct || !active) return null
+  if (!activeProduct || !active) return null;
 
   return (
     <Layout>
@@ -231,7 +231,7 @@ const Product = () => {
                           alt={fruit.name}
                         />
                       </Fruit>
-                    )
+                    );
                   },
                 )}
               </Fruits>
@@ -248,15 +248,15 @@ const Product = () => {
         </Section>
       </Main>
     </Layout>
-  )
-}
+  );
+};
 
 export const getServerSideProps = async (props: any) => {
   return {
     props: {
       query: props.query,
     },
-  }
-}
+  };
+};
 
-export default Product
+export default Product;

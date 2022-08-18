@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { DARK_GRAY } from '../styles/colors'
+import styled from "styled-components";
+import { DARK_GRAY } from "../styles/colors";
 
 const Title = styled.h2`
   display: flex;
@@ -8,12 +8,12 @@ const Title = styled.h2`
   margin: 48px 0;
   font-size: 36px;
   font-weight: 700;
-  color: ${p => p.color || DARK_GRAY};
+  color: ${(p) => p.color || DARK_GRAY};
 
   @media (max-width: 900px) {
     margin: 24px 0;
     font-size: 24px;
   }
-`
+`;
 
-export default Title
+export default Title;

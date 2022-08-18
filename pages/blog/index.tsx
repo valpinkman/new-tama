@@ -1,34 +1,33 @@
-import React,{ useEffect } from 'react'
-import { getPosts } from '../../src/services/wordpress'
-import Layout from '../../src/components/layout'
+import React, { useEffect } from "react";
+import { getPosts } from "../../src/services/wordpress";
+import Layout from "../../src/components/layout";
 
 const Blog = (props: any) => {
   useEffect(() => {
-    console.log(props)
-  })
+    console.log(props);
+  });
 
   return (
     <Layout>
       <h1>Blog</h1>
     </Layout>
-  )
-}
+  );
+};
 
 Blog.getInitialProps = async () => {
   try {
-    const posts = await getPosts()
+    const posts = await getPosts();
     return {
-      page: 'blog',
+      page: "blog",
       posts,
-    }
+    };
   } catch (error) {
-    console.log(error)
+    console.log(error);
     return {
-      page: 'blog',
+      page: "blog",
       posts: [],
-    }
+    };
   }
+};
 
-}
-
-export default Blog
+export default Blog;

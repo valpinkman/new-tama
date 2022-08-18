@@ -1,6 +1,12 @@
-import React from 'react'
-import { Carousel } from 'react-responsive-carousel'
-function WCarousel({ children, small }: { children?: Array<React.ReactChild>; small?: boolean }) {
+import React from "react";
+import { Carousel } from "react-responsive-carousel";
+function WCarousel({
+  children,
+  small,
+}: {
+  children?: Array<React.ReactChild>;
+  small?: boolean;
+}) {
   return (
     <Carousel
       autoPlay
@@ -16,7 +22,7 @@ function WCarousel({ children, small }: { children?: Array<React.ReactChild>; sm
     >
       {children}
     </Carousel>
-  )
+  );
 }
 
-export default WCarousel
+export default WCarousel;

@@ -772,4 +772,4 @@ export default {
       },
     ],
   },
-}
+};

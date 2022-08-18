@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const Article = (props: any) => {
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
-    console.log(props)
-    console.log(router)
-  })
+    console.log(props);
+    console.log(router);
+  });
 
-  return <h1>Fraiche {router.query.slug}</h1>
-}
+  return <h1>Fraiche {router.query.slug}</h1>;
+};
 
 Article.getInitialProps = async () => {
   return {
-    page: 'fraiche',
-  }
-}
+    page: "fraiche",
+  };
+};
 
-export default Article
+export default Article;
